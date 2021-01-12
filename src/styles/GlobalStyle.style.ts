@@ -15,6 +15,6 @@ export default createGlobalStyle`
   body {
     background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
-    font: 400 16px Vollkorn SC, serif;
+    font: 400 16px Montserrat, sans-serif;
   }
 `
