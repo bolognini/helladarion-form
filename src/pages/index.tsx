@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Container, ImageHolder } from '../styles/pages/Home.style'
-import { Button } from '../components/Button/Button'
+import { Container, ImageHolder } from 'styles/pages/Home.style'
+import { Button } from 'components/Button/Button'
 
 const Home: React.FC = () => {
   const router = useRouter()

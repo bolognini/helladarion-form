@@ -1,5 +1,5 @@
-import { Attributes } from '../../components/Attributes/Attributes'
-import { Profile } from '../../components/Profile/Profile'
+import { Attributes } from 'components/Attributes/Attributes'
+import { Profile } from 'components/Profile/Profile'
 
 interface Step {
   step: Array<{ title: string; description: string; component: JSX.Element }>
