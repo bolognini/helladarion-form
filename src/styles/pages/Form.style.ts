@@ -20,5 +20,12 @@ export const Container = styled.div`
     font-size: 18px;
     line-height: 28px;
     text-align: center;
+    max-width: 600px;
   }
+`
+
+export const ButtonWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 480px;
 `

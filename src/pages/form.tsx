@@ -1,25 +1,26 @@
 import { useRouter } from 'next/router'
-import { Container } from 'styles/pages/Form.style'
 import { Button } from 'components/Button/Button'
 import { useForm } from 'hooks/pages/useForm'
 import { Stepper } from 'components/Stepper/Stepper'
+import { Container, ButtonWrapper } from 'styles/pages/Form.style'
 
 const Home: React.FC = () => {
   const router = useRouter()
-  const { currentStep, setCurrentStep } = useForm()
+  const { currentStep, setCurrentStep, backButtonLabel } = useForm()
   return (
     <Container>
       <Stepper currentStep={currentStep} />
-      <div>
-        <Button onClick={() => router.push('/')}>cancelar</Button>
+      <ButtonWrapper>
         <Button
+          secondary
           onClick={() => {
-            setCurrentStep(currentStep + 1)
+            currentStep > 0 ? setCurrentStep(currentStep - 1) : router.push('/')
           }}
         >
-          próximo
+          {backButtonLabel}
         </Button>
-      </div>
+        <Button onClick={() => setCurrentStep(currentStep + 1)}>próximo</Button>
+      </ButtonWrapper>
     </Container>
   )
 }

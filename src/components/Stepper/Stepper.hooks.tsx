@@ -2,14 +2,13 @@ import { Attributes } from 'components/Attributes/Attributes'
 import { Profile } from 'components/Profile/Profile'
 
 interface Step {
-  step: Array<{ title: string; description: string; component: JSX.Element }>
+  activeStep: { title: string; description?: string; component: JSX.Element }
 }
 
-export const useStepper = (): Step => {
+export const useStepper = (currentStep: number): Step => {
   const step = [
     {
       title: 'Perfil da Criatura',
-      description: 'As informações básicas do monstro',
       component: <Profile />
     },
     {
@@ -20,7 +19,9 @@ export const useStepper = (): Step => {
     }
   ]
 
+  const activeStep = step[currentStep]
+
   return {
-    step
+    activeStep
   }
 }
