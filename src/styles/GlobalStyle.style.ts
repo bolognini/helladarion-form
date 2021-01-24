@@ -13,8 +13,8 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.colors.black};
-    color: ${({ theme }) => theme.colors.white};
+    background: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
     font: 400 16px Montserrat, sans-serif;
   }
 
@@ -24,7 +24,7 @@ export default createGlobalStyle`
 
   a, button, input, label, textarea {
     &:focus {
-      outline: 1.5px solid ${({ theme }) => theme.colors.white};
+      outline: 1.5px solid ${({ theme }) => theme.colors.text};
     }
   }
 `

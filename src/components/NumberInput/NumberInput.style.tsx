@@ -16,11 +16,11 @@ export const Container = styled.div`
     background: transparent;
     font-size: 36px;
     text-align: center;
-    color: ${({ theme }) => theme.colors.white};
-    border: 1px solid ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.text};
+    border: 2px solid ${({ theme }) => theme.colors.primary};
 
     &::placeholder {
-      color: ${({ theme }) => theme.colors.grey};
+      color: ${({ theme }) => theme.colors.placeholder};
     }
 
     &::-webkit-outer-spin-button,

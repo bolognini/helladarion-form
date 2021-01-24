@@ -10,10 +10,10 @@ export const StyledButton = styled.button<ButtonProps>`
   font-size: 24px;
   font-weight: 700;
   color: ${({ theme, secondary }) =>
-    secondary ? theme.colors.white : theme.colors.black};
+    secondary ? theme.colors.text : theme.colors.background};
   border: 2px solid
     ${({ theme, secondary }) =>
-      secondary ? theme.colors.white : theme.colors.primary};
+      secondary ? theme.colors.text : theme.colors.primary};
   background-color: ${({ theme, secondary }) =>
     secondary ? 'transparent' : theme.colors.primary};
   transition: 0.2s ease-in;
@@ -24,7 +24,7 @@ export const StyledButton = styled.button<ButtonProps>`
     border: ${({ theme, secondary }) =>
       secondary && `2px solid ${theme.colors.primary}`};
     color: ${({ theme, secondary }) =>
-      secondary ? theme.colors.primary : theme.colors.white};
+      secondary ? theme.colors.primary : theme.colors.text};
     transition: 0.2s ease-in;
   }
 `
