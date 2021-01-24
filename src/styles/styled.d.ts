@@ -2,10 +2,14 @@
 
 import 'styled-components'
 
-import theme from './theme'
-
-export type Theme = typeof theme
-
+export type Theme = {
+  colors: {
+    primary: string
+    background: string
+    text: string
+    placeholder: string
+  }
+}
 declare module 'styled-components' {
   export interface DefaultTheme extends Theme {}
 }

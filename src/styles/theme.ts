@@ -1,31 +1,24 @@
-const theme = {
+const defaultTheme = {
   colors: {
-    black: '#121214',
-    white: '#F2F2F1',
-    grey: '#828282',
-    primary: '#F9D078',
-    secondary: '#B52931'
+    placeholder: '#828282'
   }
 }
 
-export const lightTheme = {
+const light = {
   colors: {
-    black: '#121214',
-    white: '#F2F2F1',
-    grey: '#828282',
     primary: '#F9D078',
-    secondary: '#B52931'
+    background: '#121214',
+    text: '#F2F2F1'
   }
 }
 
-export const darkTheme = {
+const dark = {
   colors: {
-    black: '#F2F2F1',
-    white: '#121214',
-    grey: '#828282',
     primary: '#B52931',
-    secondary: '#F9D078'
+    background: '#F2F2F1',
+    text: '#121214'
   }
 }
 
-export default theme
+export const lightTheme = { ...defaultTheme, ...light }
+export const darkTheme = { ...defaultTheme, ...dark }
