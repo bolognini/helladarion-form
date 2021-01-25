@@ -1,19 +1,28 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+interface ContainerProps {
+  simple: boolean
+}
+
+export const Container = styled.div<ContainerProps>`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: ${({ simple }) =>
+    simple ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)'};
   grid-gap: 48px;
 
   div {
     grid-template-rows: subgrid;
   }
 
-  & div:nth-child(even) {
-    justify-self: start;
-  }
+  ${({ simple }) =>
+    simple &&
+    `
+    & div:nth-child(even) {
+      justify-self: start;
+    }
 
-  & div:nth-child(odd) {
-    justify-self: end;
-  }
+    & div:nth-child(odd) {
+      justify-self: end;
+    }
+  `}
 `

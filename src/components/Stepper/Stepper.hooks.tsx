@@ -15,6 +15,12 @@ export const useStepper = (currentStep: number): Step => {
       title: 'Atributos',
       description:
         'O deslocamento aceita apenas um valor, sem unidade de medida. Não se preocupe. Na ficha é possível realizar anotações diversas, inclusive particularidades de deslocamento.',
+      component: <Attributes simple />
+    },
+    {
+      title: 'Atributos',
+      description:
+        'Insira apenas o valor dos atributos. Os modificadores serão calculados automaticamente na ficha',
       component: <Attributes />
     }
   ]

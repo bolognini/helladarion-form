@@ -1,9 +1,13 @@
-type Props = {
+type Attribute = {
   inputList: Array<{ label: string; placeholder: string; id: string }>
 }
 
-export const useAttributes = (): Props => {
-  const inputList = [
+interface Props {
+  simple?: boolean
+}
+
+export const useAttributes = ({ simple }: Props): Attribute => {
+  const simpleList = [
     {
       label: 'Nível de Desafio',
       placeholder: '5',
@@ -25,6 +29,41 @@ export const useAttributes = (): Props => {
       id: 'range'
     }
   ]
+
+  const biggerList = [
+    {
+      label: 'Força',
+      placeholder: '25',
+      id: 'for'
+    },
+    {
+      label: 'Destreza',
+      placeholder: '12',
+      id: 'des'
+    },
+    {
+      label: 'Constituição',
+      placeholder: '23',
+      id: 'con'
+    },
+    {
+      label: 'Inteligência',
+      placeholder: '6',
+      id: 'int'
+    },
+    {
+      label: 'Sabedoria',
+      placeholder: '12',
+      id: 'sab'
+    },
+    {
+      label: 'Carisma',
+      placeholder: '9',
+      id: 'car'
+    }
+  ]
+
+  const inputList = simple ? simpleList : biggerList
 
   return {
     inputList
