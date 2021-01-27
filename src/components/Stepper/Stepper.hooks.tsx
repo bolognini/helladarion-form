@@ -1,11 +1,11 @@
 import { Attributes } from 'components/Attributes/Attributes'
 import { Profile } from 'components/Profile/Profile'
 
-interface Step {
+interface IStep {
   activeStep: { title: string; description?: string; component: JSX.Element }
 }
 
-export const useStepper = (currentStep: number): Step => {
+export const useStepper = (currentStep: number): IStep => {
   const step = [
     {
       title: 'Perfil da Criatura',

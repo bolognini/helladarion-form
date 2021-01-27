@@ -2,11 +2,11 @@ type Attribute = {
   inputList: Array<{ label: string; placeholder: string; id: string }>
 }
 
-interface Props {
+interface IProps {
   simple?: boolean
 }
 
-export const useAttributes = ({ simple }: Props): Attribute => {
+export const useAttributes = ({ simple }: IProps): Attribute => {
   const simpleList = [
     {
       label: 'Nível de Desafio',

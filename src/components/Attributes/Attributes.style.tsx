@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-interface ContainerProps {
+interface IContainerProps {
   simple: boolean
 }
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div<IContainerProps>`
   display: grid;
   grid-template-columns: ${({ simple }) =>
     simple ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)'};

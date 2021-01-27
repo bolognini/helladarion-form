@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-interface ContainerProps {
+interface IContainerProps {
   size: string
 }
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div<IContainerProps>`
   display: flex;
   flex-direction: column;
   max-width: ${({ size }) => (size === 'small' ? '200px' : '400px')};
