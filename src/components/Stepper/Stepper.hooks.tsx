@@ -1,5 +1,5 @@
 import { Attributes } from 'components/Attributes/Attributes'
-import { Senses } from 'components/Senses/Senses'
+import { Perks } from 'components/Perks/Perks'
 import { Profile } from 'components/Profile/Profile'
 
 interface IStep {
@@ -28,7 +28,13 @@ export const useStepper = (currentStep: number): IStep => {
       title: 'Sentidos',
       description:
         'A ficha destaca apenas três sentidos. Demais sentidos poderão ser acessados no modal de sentidos, na ficha digital',
-      component: <Senses />
+      component: <Perks />
+    },
+    {
+      title: 'Resistências',
+      description:
+        'A ficha destaca apenas três resistências. Demais resistências poderão ser acessadas no modal de sentidos, na ficha digital',
+      component: <Perks secondary />
     }
   ]
 

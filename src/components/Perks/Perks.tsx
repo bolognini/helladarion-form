@@ -1,10 +1,10 @@
 import { Input } from 'components/Input/Input'
 import { PlusButton } from 'components/PlusButton/PlusButton'
-import { useSenses } from './Senses.hooks'
-import { Container, InputList, InputContainer } from './Senses.style'
+import { usePerks } from './Perks.hooks'
+import { Container, InputList, InputContainer } from './Perks.style'
 
-export const Senses: React.FC = () => {
-  const { inputList, onAddInput } = useSenses()
+export const Perks: React.FC<{ secondary?: boolean }> = ({ secondary }) => {
+  const { inputList, onAddInput } = usePerks({ secondary })
 
   return (
     <Container>
