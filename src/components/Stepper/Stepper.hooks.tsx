@@ -1,4 +1,5 @@
 import { Attributes } from 'components/Attributes/Attributes'
+import { Senses } from 'components/Senses/Senses'
 import { Profile } from 'components/Profile/Profile'
 
 interface IStep {
@@ -22,6 +23,12 @@ export const useStepper = (currentStep: number): IStep => {
       description:
         'Insira apenas o valor dos atributos. Os modificadores serão calculados automaticamente na ficha',
       component: <Attributes />
+    },
+    {
+      title: 'Sentidos',
+      description:
+        'A ficha destaca apenas três sentidos. Demais sentidos poderão ser acessados no modal de sentidos, na ficha digital',
+      component: <Senses />
     }
   ]
 
