@@ -1,6 +1,7 @@
 import { Attributes } from 'components/Attributes/Attributes'
-import { Perks } from 'components/Perks/Perks'
 import { Profile } from 'components/Profile/Profile'
+import { Perks } from 'components/Perks/Perks'
+import { Abilities } from 'components/Abilities/Abilities'
 
 interface IStep {
   activeStep: { title: string; description?: string; component: JSX.Element }
@@ -35,6 +36,12 @@ export const useStepper = (currentStep: number): IStep => {
       description:
         'A ficha destaca apenas três resistências. Demais resistências poderão ser acessadas no modal de sentidos, na ficha digital',
       component: <Perks secondary />
+    },
+    {
+      title: 'Ataques',
+      description:
+        'A ficha destaca apenas quatro ataques. Demais ataques poderão ser acessados no modal de ataques, na ficha digital',
+      component: <Abilities />
     }
   ]
 

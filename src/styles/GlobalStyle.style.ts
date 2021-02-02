@@ -10,6 +10,16 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: ${({ theme }) => theme.colors.background};
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: ${({ theme }) => theme.colors.primary};
+    }
   }
 
   body {
