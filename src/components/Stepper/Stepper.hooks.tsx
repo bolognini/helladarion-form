@@ -1,7 +1,8 @@
-import { Attributes } from 'components/Attributes/Attributes'
 import { Profile } from 'components/Profile/Profile'
+import { Attributes } from 'components/Attributes/Attributes'
 import { Perks } from 'components/Perks/Perks'
 import { Abilities } from 'components/Abilities/Abilities'
+import { Notes } from 'components/Notes/Notes'
 
 interface IStep {
   activeStep: { title: string; description?: string; component: JSX.Element }
@@ -42,6 +43,12 @@ export const useStepper = (currentStep: number): IStep => {
       description:
         'A ficha destaca apenas quatro ataques. Demais ataques poderão ser acessados no modal de ataques, na ficha digital',
       component: <Abilities />
+    },
+    {
+      title: 'Tesouro e Anotações',
+      description:
+        'Tanto o tesouro quanto as anotações gerais podem ser compostos por longos textos',
+      component: <Notes />
     }
   ]
 

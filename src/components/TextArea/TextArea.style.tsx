@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+interface IProps {
+  size?: string
+}
+
+export const Container = styled.div<IProps>`
   display: flex;
   flex-direction: column;
 
@@ -11,7 +15,7 @@ export const Container = styled.div`
   }
 
   textarea {
-    height: 230px;
+    height: ${({ size }) => (size === 'small' ? '184px' : '230px')};
     width: 400px;
     resize: none;
     padding: 14px 24px;
