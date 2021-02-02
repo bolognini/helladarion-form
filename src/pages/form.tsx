@@ -10,7 +10,13 @@ interface IHome {
 
 const Home: React.FC<IHome> = pageProps => {
   const router = useRouter()
-  const { currentStep, setCurrentStep, backButtonLabel } = useForm()
+  const {
+    currentStep,
+    setCurrentStep,
+    backButtonLabel,
+    nextButtonLabel
+  } = useForm()
+  console.log(currentStep)
   return (
     <Container>
       <Stepper currentStep={currentStep} />
@@ -23,7 +29,9 @@ const Home: React.FC<IHome> = pageProps => {
         >
           {backButtonLabel}
         </Button>
-        <Button onClick={() => setCurrentStep(currentStep + 1)}>próximo</Button>
+        <Button onClick={() => setCurrentStep(currentStep + 1)}>
+          {nextButtonLabel}
+        </Button>
         {/* <input
           checked={pageProps.value}
           type="checkbox"

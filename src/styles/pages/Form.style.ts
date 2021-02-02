@@ -13,14 +13,6 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.colors.primary};
     margin-top: 40px;
   }
-
-  p {
-    margin-top: 8px;
-    font-size: 18px;
-    line-height: 28px;
-    text-align: center;
-    max-width: 600px;
-  }
 `
 
 export const ButtonWrapper = styled.div`
