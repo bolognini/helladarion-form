@@ -19,7 +19,7 @@ export const useStepper = (currentStep: number): IStep => {
       title: 'Atributos',
       description:
         'O deslocamento aceita apenas um valor, sem unidade de medida. Não se preocupe. Na ficha é possível realizar anotações diversas, inclusive particularidades de deslocamento.',
-      component: <Attributes simple />
+      component: <Attributes coreAttributes />
     },
     {
       title: 'Atributos',

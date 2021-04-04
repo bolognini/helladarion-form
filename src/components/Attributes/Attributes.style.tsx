@@ -1,21 +1,21 @@
 import styled from 'styled-components'
 
 interface IContainerProps {
-  simple: boolean
+  coreAttributes: boolean
 }
 
 export const Container = styled.div<IContainerProps>`
   display: grid;
-  grid-template-columns: ${({ simple }) =>
-    simple ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)'};
+  grid-template-columns: ${({ coreAttributes }) =>
+    coreAttributes ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)'};
   grid-gap: 48px;
 
   div {
     grid-template-rows: subgrid;
   }
 
-  ${({ simple }) =>
-    simple &&
+  ${({ coreAttributes }) =>
+    coreAttributes &&
     `
     & div:nth-child(even) {
       justify-self: start;
