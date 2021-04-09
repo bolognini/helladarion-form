@@ -2,12 +2,20 @@ import { NumberInput } from 'components/NumberInput/NumberInput'
 import { useAttributes } from './Attributes.hooks'
 import { Container } from './Attributes.style'
 
-export const Attributes: React.FC = () => {
-  const { inputList } = useAttributes()
+export const Attributes: React.FC<{ coreAttributes?: boolean }> = ({
+  coreAttributes
+}) => {
+  const { inputList, attributeType } = useAttributes({ coreAttributes })
   return (
-    <Container>
+    <Container coreAttributes={coreAttributes}>
       {inputList.map(({ label, placeholder, id }) => (
-        <NumberInput label={label} placeholder={placeholder} id={id} key={id} />
+        <NumberInput
+          label={label}
+          placeholder={placeholder}
+          id={id}
+          key={id}
+          attributeType={attributeType && attributeType}
+        />
       ))}
     </Container>
   )

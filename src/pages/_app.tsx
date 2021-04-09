@@ -8,8 +8,9 @@ import { lightTheme, darkTheme } from '../styles/theme'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const [mounted, setMounted] = useState(false)
-  const { value } = useDarkMode(false, { storageKey: null, onChange: null })
+  const { value, toggle } = useDarkMode(false)
   const theme = value ? lightTheme : darkTheme
+  const props = { ...pageProps, value, toggle }
 
   useEffect(() => {
     setMounted(true)
@@ -17,7 +18,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   const app = (
     <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
+      <Component {...props} />
       <GlobalStyle />
     </ThemeProvider>
   )

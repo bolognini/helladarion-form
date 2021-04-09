@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-interface ButtonProps {
+interface IButtonProps {
   secondary: boolean
 }
 
-export const StyledButton = styled.button<ButtonProps>`
+export const StyledButton = styled.button<IButtonProps>`
   width: 200px;
   height: 70px;
   font-size: 24px;

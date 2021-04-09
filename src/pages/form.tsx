@@ -3,10 +3,20 @@ import { Button } from 'components/Button/Button'
 import { useForm } from 'hooks/pages/useForm'
 import { Stepper } from 'components/Stepper/Stepper'
 import { Container, ButtonWrapper } from 'styles/pages/Form.style'
+interface IHome {
+  value: boolean
+  toggle: () => void
+}
 
-const Home: React.FC = () => {
+const Home: React.FC<IHome> = pageProps => {
   const router = useRouter()
-  const { currentStep, setCurrentStep, backButtonLabel } = useForm()
+  const {
+    currentStep,
+    setCurrentStep,
+    backButtonLabel,
+    nextButtonLabel
+  } = useForm()
+  console.log(currentStep)
   return (
     <Container>
       <Stepper currentStep={currentStep} />
@@ -19,7 +29,14 @@ const Home: React.FC = () => {
         >
           {backButtonLabel}
         </Button>
-        <Button onClick={() => setCurrentStep(currentStep + 1)}>próximo</Button>
+        <Button onClick={() => setCurrentStep(currentStep + 1)}>
+          {nextButtonLabel}
+        </Button>
+        {/* <input
+          checked={pageProps.value}
+          type="checkbox"
+          onChange={pageProps.toggle}
+        /> */}
       </ButtonWrapper>
     </Container>
   )

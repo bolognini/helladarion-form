@@ -7,7 +7,7 @@ export type Theme = {
     primary: string
     background: string
     text: string
-    placeholder: string
+    placeholder?: string
   }
 }
 declare module 'styled-components' {

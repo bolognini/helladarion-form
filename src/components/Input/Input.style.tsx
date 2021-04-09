@@ -1,13 +1,26 @@
 import styled from 'styled-components'
 
-interface ContainerProps {
+interface IContainerProps {
   size: string
 }
+// 250
+// 130
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div<IContainerProps>`
   display: flex;
   flex-direction: column;
-  max-width: ${({ size }) => (size === 'small' ? '200px' : '400px')};
+  max-width: ${({ size }) => {
+    switch (size) {
+      case 'xsmall':
+        return '130px'
+      case 'small':
+        return '200px'
+      case 'medium':
+        return '250'
+      default:
+        return '400px'
+    }
+  }};
 
   label {
     font-size: 18px;

@@ -7,8 +7,8 @@ export const Profile: React.FC = () => {
   return (
     <Container>
       <LeftBox>
-        <Input label="Nome da Criatura" placeholder="Wyvern" />
-        <TextArea label="Descrição" />
+        <Input id="name" label="Nome da Criatura" placeholder="Wyvern" />
+        <TextArea id="description" label="Descrição" />
       </LeftBox>
       <ImageUploader />
     </Container>
