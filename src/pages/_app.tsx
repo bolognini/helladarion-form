@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
+import { Provider } from 'react-redux'
 import useDarkMode from 'use-dark-mode'
+import store from '../store'
 
 import GlobalStyle from '../styles/GlobalStyle.style'
 import { lightTheme, darkTheme } from '../styles/theme'
@@ -18,8 +20,10 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   const app = (
     <ThemeProvider theme={theme}>
-      <Component {...props} />
-      <GlobalStyle />
+      <Provider store={store}>
+        <Component {...props} />
+        <GlobalStyle />
+      </Provider>
     </ThemeProvider>
   )
 

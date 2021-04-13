@@ -16,7 +16,6 @@ const Home: React.FC<IHome> = pageProps => {
     backButtonLabel,
     nextButtonLabel
   } = useForm()
-  console.log(currentStep)
   return (
     <Container>
       <Stepper currentStep={currentStep} />

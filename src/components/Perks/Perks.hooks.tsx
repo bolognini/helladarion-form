@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
 type Perks = {
+  listType: string
   inputList: Array<{ largePlaceholder: string; smallPlaceholder: string }>
   onAddInput: () => void
 }
@@ -24,7 +25,7 @@ export const usePerks = ({ secondary }: IProps): Perks => {
     }
   ]
 
-  const resistancesList = [
+  const resistanceList = [
     {
       largePlaceholder: 'Fortitude +14',
       smallPlaceholder: 'D20 + 20'
@@ -41,18 +42,20 @@ export const usePerks = ({ secondary }: IProps): Perks => {
 
   const [inputList, setInputList] = useState([])
   const [newPlaceholder, setNewPlaceholder] = useState('')
+  const [listType, setListType] = useState('')
 
   useEffect(() => {
     const initialList = secondary
       ? {
-          list: resistancesList,
+          list: resistanceList,
           placeholder: 'Novo Resistência'
         }
       : {
           list: sensesList,
-          placeholder: 'Nova Sentido'
+          placeholder: 'Novo Sentido'
         }
 
+    secondary ? setListType('resistanceList') : setListType('sensesList')
     setInputList(initialList.list)
     setNewPlaceholder(initialList.placeholder)
   }, [secondary])
@@ -65,6 +68,7 @@ export const usePerks = ({ secondary }: IProps): Perks => {
 
   return {
     inputList,
-    onAddInput
+    onAddInput,
+    listType
   }
 }

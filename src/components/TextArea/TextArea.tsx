@@ -6,13 +6,17 @@ export const TextArea: React.FC<{
   label: string
   size?: string
 }> = ({ id, label, size }) => {
-  const { onSaveData } = useSaveData()
+  const { updateMonsterData } = useSaveData()
+
   return (
     <Container size={size}>
       <label>{label}</label>
       <textarea
         onKeyUp={event =>
-          onSaveData({ id, value: (event.target as HTMLTextAreaElement).value })
+          updateMonsterData({
+            id,
+            value: (event.target as HTMLInputElement).value
+          })
         }
       />
     </Container>

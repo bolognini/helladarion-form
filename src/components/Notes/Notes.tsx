@@ -4,8 +4,8 @@ import { TextArea } from 'components/TextArea/TextArea'
 export const Notes: React.FC = () => {
   return (
     <Container>
-      <TextArea size="small" label="Tesouro" />
-      <TextArea size="small" label="Anotações Gerais" />
+      <TextArea id="treasury" size="small" label="Tesouro" />
+      <TextArea id="notes" size="small" label="Anotações Gerais" />
     </Container>
   )
 }

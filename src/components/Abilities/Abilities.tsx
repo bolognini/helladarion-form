@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 import { Input } from 'components/Input/Input'
 import { PlusButton } from 'components/PlusButton/PlusButton'
 import { Container, Table, InputContainer } from './Abilities.style'
@@ -11,9 +12,12 @@ export const Abilities: React.FC = () => {
       <Table>
         {abilitiesList.map((item, index) => (
           <InputContainer key={index}>
-            {item.map(({ label, placeholder = '-', size }) => (
+            {item.map(({ id, label, placeholder = '-', size }) => (
               <Input
+                id={id}
                 key={label}
+                index={index}
+                saveType="UPDATE_ABILITIES"
                 label={label}
                 placeholder={placeholder}
                 size={size}
