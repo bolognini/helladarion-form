@@ -1,52 +1,32 @@
+import { useDispatch } from 'react-redux'
+
 type Props = {
   layer?: string
+  type?: string
+  listType?: string
   id: string
+  index?: number
   value: string
 }
 
 interface ISaveData {
-  onSaveData: ({ id, value }: Props) => void
-  onSaveDataAsObject: ({ id, value }: Props) => void
+  updateMonsterData: ({ id, value }: Props) => void
 }
 
 export const useSaveData = (): ISaveData => {
-  const onSaveData = ({ id, value }: Props) => {
-    const initialData = JSON.parse(window.localStorage.getItem('data'))
+  const dispatch = useDispatch()
 
-    window.localStorage.setItem(
-      'data',
-      JSON.stringify({
-        ...initialData,
-        [id]: value
-      })
-    )
-  }
-  const onSaveDataAsObject = ({ layer, id, value }: Props) => {
-    const initialData = JSON.parse(window.localStorage.getItem('data'))
-    const initialLayerData = JSON.parse(window.localStorage.getItem('data'))[
-      layer
-    ]
-
-    const baseModificator = -5
-    const modificator = Math.floor(Number(value) / 2) + baseModificator
-
-    window.localStorage.setItem(
-      'data',
-      JSON.stringify({
-        ...initialData,
-        [layer]: {
-          ...initialLayerData,
-          [id]: {
-            value,
-            modificator
-          }
-        }
-      })
-    )
+  const updateMonsterData = ({
+    type = 'UPDATE_DATA',
+    listType,
+    index,
+    id,
+    value
+  }) => {
+    dispatch({ type, [id]: value, index, listType })
   }
 
   return {
-    onSaveData,
-    onSaveDataAsObject
+    updateMonsterData
   }
 }

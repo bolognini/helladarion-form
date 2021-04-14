@@ -1,13 +1,17 @@
+import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 type Props = {
   currentStep: number
   setCurrentStep: (currentStep: number) => void
   backButtonLabel: string
   nextButtonLabel: string
+  onSendData: () => void
 }
 
 export const useForm = (): Props => {
+  const monsterData = useSelector(state => state.data)
   const [currentStep, setCurrentStep] = useState(0)
   const [backButtonLabel, setBackButtonLabel] = useState('cancelar')
   const [nextButtonLabel, setNextButtonLabel] = useState('próximo')
@@ -22,10 +26,18 @@ export const useForm = (): Props => {
       : setNextButtonLabel('próximo')
   }, [currentStep])
 
+  const onSendData = () => {
+    axios
+      .post('http://localhost:3333/monster/create', monsterData)
+      .catch(error => console.error(error))
+    // window.open('https://helladarion-codex.netlify.app/', '_blank')
+  }
+
   return {
     currentStep,
     setCurrentStep,
     backButtonLabel,
-    nextButtonLabel
+    nextButtonLabel,
+    onSendData
   }
 }

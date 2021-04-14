@@ -14,9 +14,9 @@ const Home: React.FC<IHome> = pageProps => {
     currentStep,
     setCurrentStep,
     backButtonLabel,
-    nextButtonLabel
+    nextButtonLabel,
+    onSendData
   } = useForm()
-  console.log(currentStep)
   return (
     <Container>
       <Stepper currentStep={currentStep} />
@@ -29,7 +29,11 @@ const Home: React.FC<IHome> = pageProps => {
         >
           {backButtonLabel}
         </Button>
-        <Button onClick={() => setCurrentStep(currentStep + 1)}>
+        <Button
+          onClick={() => {
+            currentStep < 7 ? setCurrentStep(currentStep + 1) : onSendData()
+          }}
+        >
           {nextButtonLabel}
         </Button>
         {/* <input

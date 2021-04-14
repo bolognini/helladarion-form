@@ -7,7 +7,7 @@ export const NumberInput: React.FC<{
   id: string
   attributeType: string
 }> = ({ label, placeholder, id, attributeType }) => {
-  const { onSaveData, onSaveDataAsObject } = useSaveData()
+  const { updateMonsterData } = useSaveData()
   return (
     <Container>
       <label htmlFor={id}>{label}</label>
@@ -17,13 +17,14 @@ export const NumberInput: React.FC<{
         placeholder={placeholder}
         onKeyUp={event => {
           if (attributeType) {
-            onSaveDataAsObject({
-              layer: attributeType,
+            updateMonsterData({
+              type: 'UPDATE_ATTRIBUTES',
               id,
               value: (event.target as HTMLInputElement).value
             })
           } else {
-            onSaveData({
+            updateMonsterData({
+              type: 'UPDATE_DATA',
               id,
               value: (event.target as HTMLInputElement).value
             })
