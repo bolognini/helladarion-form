@@ -9,8 +9,8 @@ interface IProps {
   secondary?: boolean
 }
 
-export const usePerks = ({ secondary }: IProps): Perks => {
-  const sensesList = [
+export const usePerks = ({ secondary = false }: IProps): Perks => {
+  const senses = [
     {
       largePlaceholder: 'Iniciativa +5',
       smallPlaceholder: 'D20 + 16'
@@ -25,7 +25,7 @@ export const usePerks = ({ secondary }: IProps): Perks => {
     }
   ]
 
-  const resistanceList = [
+  const resistances = [
     {
       largePlaceholder: 'Fortitude +14',
       smallPlaceholder: 'D20 + 20'
@@ -47,17 +47,19 @@ export const usePerks = ({ secondary }: IProps): Perks => {
   useEffect(() => {
     const initialList = secondary
       ? {
-          list: resistanceList,
-          placeholder: 'Novo Resistência'
+          list: resistances,
+          placeholder: 'Nova Resistência'
         }
       : {
-          list: sensesList,
+          list: senses,
           placeholder: 'Novo Sentido'
         }
 
-    secondary ? setListType('resistanceList') : setListType('sensesList')
+    secondary ? setListType('resistances') : setListType('senses')
     setInputList(initialList.list)
     setNewPlaceholder(initialList.placeholder)
+    const inputList = Array.from(document.querySelectorAll('input'))
+    inputList.forEach(input => (input.value = ''))
   }, [secondary])
 
   const onAddInput = () =>

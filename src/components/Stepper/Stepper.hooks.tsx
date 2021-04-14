@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux'
 import { Profile } from 'components/Profile/Profile'
 import { Attributes } from 'components/Attributes/Attributes'
 import { Perks } from 'components/Perks/Perks'
@@ -10,6 +11,8 @@ interface IStep {
 }
 
 export const useStepper = (currentStep: number): IStep => {
+  const monsterData = useSelector(state => state.data)
+
   const step = [
     {
       title: 'Perfil da Criatura',
@@ -52,7 +55,7 @@ export const useStepper = (currentStep: number): IStep => {
       component: <Notes />
     },
     {
-      title: 'Wyvern',
+      title: monsterData.name ? monsterData.name : 'New Monster',
       component: <Resume />
     }
   ]

@@ -10,7 +10,7 @@ const INITIAL_STATE = {
     healthpoints: 0,
     treasury: '',
     notes: '',
-    attributeList: [
+    attributes: [
       {
         attributeName: 'FOR',
         value: 0,
@@ -42,19 +42,19 @@ const INITIAL_STATE = {
         modificator: 0
       }
     ],
-    sensesList: [
+    senses: [
       {
         name: '',
         rolling: ''
       }
     ],
-    resistanceList: [
+    resistances: [
       {
         name: '',
         rolling: ''
       }
     ],
-    attacksList: [
+    attacks: [
       {
         attackName: '',
         bonus: '',
@@ -72,9 +72,9 @@ const monsterData = (state = INITIAL_STATE, action) => {
   const key = Object.keys(action)[1]
   const value = action[key]
   const listType = action.listType
-  const attrList = state.data.attributeList
+  const attrList = state.data.attributes
   const perksList = state.data[listType]
-  const abilitiesList = state.data.attacksList
+  const abilitiesList = state.data.attacks
   const attrIndex = attrList.findIndex(attr => attr.attributeName === key)
   const index = action.index
 
@@ -95,7 +95,7 @@ const monsterData = (state = INITIAL_STATE, action) => {
         ...state,
         data: {
           ...state.data,
-          attributeList: [...attrList]
+          attributes: [...attrList]
         }
       }
     case 'UPDATE_PERKS':
@@ -115,7 +115,7 @@ const monsterData = (state = INITIAL_STATE, action) => {
         ...state,
         data: {
           ...state.data,
-          attacksList: [...abilitiesList]
+          attacks: [...abilitiesList]
         }
       }
     default:

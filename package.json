@@ -9,6 +9,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "next": "10.0.4",
     "next-images": "^1.6.2",
     "react": "17.0.1",
