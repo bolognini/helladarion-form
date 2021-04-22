@@ -1,5 +1,6 @@
 import { Container } from './NumberInput.style'
 import { useSaveData } from 'hooks/useSaveData'
+import { useLocalStorage } from 'hooks/useLocalStorage'
 
 export const NumberInput: React.FC<{
   label: string
@@ -8,6 +9,8 @@ export const NumberInput: React.FC<{
   attributeType: string
 }> = ({ label, placeholder, id, attributeType }) => {
   const { updateMonsterData } = useSaveData()
+  const { saveOnLocalStorage, defaultValue } = useLocalStorage({ id })
+
   return (
     <Container>
       <label htmlFor={id}>{label}</label>
@@ -15,7 +18,11 @@ export const NumberInput: React.FC<{
         id={id}
         type="number"
         placeholder={placeholder}
+        defaultValue={defaultValue && defaultValue}
         onKeyUp={event => {
+          saveOnLocalStorage({
+            value: (event.target as HTMLInputElement).value
+          })
           if (attributeType) {
             updateMonsterData({
               type: 'UPDATE_ATTRIBUTES',

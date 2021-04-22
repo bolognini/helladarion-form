@@ -13,6 +13,7 @@ export const Perks: React.FC<{ secondary?: boolean }> = ({ secondary }) => {
           <InputContainer key={index}>
             <Input
               id="name"
+              localStorageId={`${listType}-name-${index}`}
               index={index}
               listType={listType}
               saveType="UPDATE_PERKS"
@@ -21,6 +22,7 @@ export const Perks: React.FC<{ secondary?: boolean }> = ({ secondary }) => {
             />
             <Input
               id="rolling"
+              localStorageId={`${listType}-rolling-${index}`}
               index={index}
               listType={listType}
               saveType="UPDATE_PERKS"
