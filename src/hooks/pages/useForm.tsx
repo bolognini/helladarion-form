@@ -29,8 +29,13 @@ export const useForm = (): Props => {
   const onSendData = () => {
     axios
       .post('http://localhost:3333/monster/create', monsterData)
+      .then(res => {
+        window.open(
+          `https://helladarion-codex.netlify.app/?id=${res.data.id}`,
+          '_blank'
+        )
+      })
       .catch(error => console.error(error))
-    // window.open('https://helladarion-codex.netlify.app/', '_blank')
   }
 
   return {
