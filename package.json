@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "export": "next export"
   },
   "dependencies": {
     "axios": "^0.21.1",
