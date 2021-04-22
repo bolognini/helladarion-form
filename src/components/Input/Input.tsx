@@ -1,8 +1,10 @@
 import { Container } from './Input.style'
 import { useSaveData } from 'hooks/useSaveData'
+import { useLocalStorage } from 'hooks/useLocalStorage'
 
 type Props = {
   id: string
+  localStorageId?: string
   label: string
   placeholder: string
   index?: number
@@ -13,6 +15,7 @@ type Props = {
 
 export const Input: React.FC<Props> = ({
   id,
+  localStorageId,
   index,
   label,
   placeholder,
@@ -21,6 +24,9 @@ export const Input: React.FC<Props> = ({
   saveType = 'UPDATE_DATA'
 }) => {
   const { updateMonsterData } = useSaveData()
+  const { saveOnLocalStorage, defaultValue } = useLocalStorage({
+    id: localStorageId || id
+  })
 
   return (
     <Container size={size}>
@@ -28,7 +34,11 @@ export const Input: React.FC<Props> = ({
       <input
         type="text"
         placeholder={placeholder}
-        onKeyUp={event =>
+        defaultValue={defaultValue && defaultValue}
+        onKeyUp={event => {
+          saveOnLocalStorage({
+            value: (event.target as HTMLInputElement).value
+          })
           updateMonsterData({
             type: saveType,
             listType,
@@ -36,7 +46,7 @@ export const Input: React.FC<Props> = ({
             id,
             value: (event.target as HTMLInputElement).value
           })
-        }
+        }}
       />
     </Container>
   )

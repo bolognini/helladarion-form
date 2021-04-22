@@ -15,6 +15,7 @@ export const Abilities: React.FC = () => {
             {item.map(({ id, label, placeholder = '-', size }) => (
               <Input
                 id={id}
+                localStorageId={`${id}-${index}`}
                 key={label}
                 index={index}
                 saveType="UPDATE_ABILITIES"
