@@ -28,7 +28,7 @@ export const useForm = (): Props => {
 
   const onSendData = () => {
     axios
-      .post('http://localhost:3333/monster/create', monsterData)
+      .post('https://helladarion.herokuapp.com/monster/create', monsterData)
       .then(res => {
         localStorage.clear()
         window.open(
