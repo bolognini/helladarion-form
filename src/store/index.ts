@@ -10,6 +10,7 @@ const INITIAL_STATE = {
     healthpoints: 0,
     treasury: '',
     notes: '',
+    mugshot: '',
     attributes: [
       {
         attributeName: 'FOR',

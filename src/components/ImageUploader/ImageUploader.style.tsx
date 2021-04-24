@@ -11,11 +11,18 @@ export const Container = styled.div`
   }
 
   label {
-    height: 100%;
+    display: flex;
+    place-content: center;
+    height: 340px;
     width: 400px;
     padding: 14px 24px;
     background: transparent;
     border: 2px solid ${({ theme }) => theme.colors.primary};
     cursor: pointer;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 `

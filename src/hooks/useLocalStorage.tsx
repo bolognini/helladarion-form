@@ -15,7 +15,7 @@ interface ILocalStorage {
 }
 
 export const useLocalStorage = ({ id }: Props): ILocalStorage => {
-  const [defaultValue, setDefaultValue] = useState(null)
+  const [defaultValue, setDefaultValue] = useState('')
 
   const saveOnLocalStorage = ({ value }) => {
     localStorage.setItem(`${id}`, value)
