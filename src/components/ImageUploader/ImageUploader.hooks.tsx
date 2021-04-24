@@ -22,13 +22,14 @@ export const useImageUploader = (): IUseImageUploader => {
     reader.addEventListener(
       'load',
       () => {
+        const readerResult: string = reader.result as string
         setImageSource(reader.result)
         updateMonsterData({
           id: 'mugshot',
-          value: String(reader.result)
+          value: window.btoa(readerResult)
         })
         saveOnLocalStorage({
-          value: String(reader.result)
+          value: String(readerResult)
         })
       },
       false

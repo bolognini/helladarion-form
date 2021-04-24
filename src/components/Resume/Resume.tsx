@@ -11,7 +11,7 @@ export const Resume: React.FC = () => {
         <p>{`”${monsterData.description}”`}</p>
       </Info>
       <ImageHolder>
-        <Image url={monsterData.mugshot || '/wyvern.png'} />
+        <Image url={localStorage.getItem('mugshot') || '/wyvern.png'} />
       </ImageHolder>
     </Container>
   )

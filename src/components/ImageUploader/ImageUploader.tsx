@@ -13,7 +13,7 @@ export const ImageUploader: React.FC = () => {
       <input
         id="image-uploader"
         type="file"
-        accept=".jpg,.png"
+        accept=".jpg,.jpeg,.png"
         hidden
         onChange={e => onSaveImage({ file: e.target.files[0] })}
       ></input>
