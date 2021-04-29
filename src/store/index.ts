@@ -13,32 +13,32 @@ const INITIAL_STATE = {
     mugshot: '',
     attributes: [
       {
-        attributeName: 'FOR',
+        name: 'FOR',
         value: 0,
         modificator: 0
       },
       {
-        attributeName: 'DES',
+        name: 'DES',
         value: 0,
         modificator: 0
       },
       {
-        attributeName: 'CON',
+        name: 'CON',
         value: 0,
         modificator: 0
       },
       {
-        attributeName: 'INT',
+        name: 'INT',
         value: 0,
         modificator: 0
       },
       {
-        attributeName: 'SAB',
+        name: 'SAB',
         value: 0,
         modificator: 0
       },
       {
-        attributeName: 'CAR',
+        name: 'CAR',
         value: 0,
         modificator: 0
       }
@@ -76,7 +76,7 @@ const monsterData = (state = INITIAL_STATE, action) => {
   const attrList = state.data.attributes
   const perksList = state.data[listType]
   const abilitiesList = state.data.attacks
-  const attrIndex = attrList.findIndex(attr => attr.attributeName === key)
+  const attrIndex = attrList.findIndex(attr => attr.name === key)
   const index = action.index
 
   const baseModificator = -5
@@ -87,7 +87,7 @@ const monsterData = (state = INITIAL_STATE, action) => {
       return { ...state, data: { ...state.data, [key]: value } }
     case 'UPDATE_ATTRIBUTES':
       attrList[attrIndex] = {
-        attributeName: key,
+        name: key,
         value: Number(value),
         modificator
       }
