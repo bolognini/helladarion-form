@@ -8,6 +8,7 @@ const INITIAL_STATE = {
     defense: 0,
     distance: 0,
     healthpoints: 0,
+    currentHealth: 0,
     treasury: '',
     notes: '',
     mugshot: '',
@@ -84,7 +85,14 @@ const monsterData = (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
     case 'UPDATE_DATA':
-      return { ...state, data: { ...state.data, [key]: value } }
+      if (key === 'healthpoints') {
+        return {
+          ...state,
+          data: { ...state.data, healthpoints: value, currentHealth: value }
+        }
+      } else {
+        return { ...state, data: { ...state.data, [key]: value } }
+      }
     case 'UPDATE_ATTRIBUTES':
       attrList[attrIndex] = {
         name: key,
