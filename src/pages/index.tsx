@@ -1,9 +1,15 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Container, ImageHolder } from 'styles/pages/Home.style'
+import { ThemeButton } from 'components/ThemeButton/ThemeButton'
 import { Button } from 'components/Button/Button'
 
-const Home: React.FC = () => {
+interface IHome {
+  value: boolean
+  toggle: () => void
+}
+
+const Home: React.FC<IHome> = pageProps => {
   const router = useRouter()
   return (
     <Container>
@@ -19,6 +25,7 @@ const Home: React.FC = () => {
         <img src="/monster-sheet.png" alt="Ficha digital" />
       </ImageHolder>
       <Button onClick={() => router.push('/form')}>criar</Button>
+      <ThemeButton value={pageProps.value} toggle={pageProps.toggle} />
     </Container>
   )
 }

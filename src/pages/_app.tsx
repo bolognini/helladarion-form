@@ -10,7 +10,7 @@ import { Transition } from 'components/Transition/Transition'
 import GlobalStyle from '../styles/GlobalStyle.style'
 import { lightTheme, darkTheme } from '../styles/theme'
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
   const [mounted, setMounted] = useState(false)
   const { value, toggle } = useDarkMode(false)
@@ -39,4 +39,4 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return app
 }
 
-export default MyApp
+export default App

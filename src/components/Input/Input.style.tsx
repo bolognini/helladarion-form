@@ -3,8 +3,6 @@ import styled from 'styled-components'
 interface IContainerProps {
   size: string
 }
-// 250
-// 130
 
 export const Container = styled.div<IContainerProps>`
   display: flex;

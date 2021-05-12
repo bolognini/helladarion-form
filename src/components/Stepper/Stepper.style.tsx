@@ -19,5 +19,5 @@ export const Description = styled.p`
 `
 
 export const StepperWrapper = styled.div`
-  padding: 88px 0 68px 0;
+  padding: 48px 0 24px 0;
 `

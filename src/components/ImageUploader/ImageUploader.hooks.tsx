@@ -5,16 +5,28 @@ import { useLocalStorage } from 'hooks/useLocalStorage'
 interface IUseImageUploader {
   onSaveImage: ({ file }) => void
   imageSource: string
+  themeUploader: string
 }
 
-export const useImageUploader = (): IUseImageUploader => {
+interface IProps {
+  theme: boolean
+}
+
+export const useImageUploader = ({ theme }: IProps): IUseImageUploader => {
   const [imageSource, setImageSource] = useState(null)
+  const [themeUploader, setThemeUploader] = useState('/uploader-dark.svg')
   const { updateMonsterData } = useSaveData()
   const { saveOnLocalStorage } = useLocalStorage({ id: 'mugshot' })
 
   useEffect(() => {
     setImageSource(localStorage.getItem('mugshot'))
   }, [])
+
+  useEffect(() => {
+    theme
+      ? setThemeUploader('/uploader-dark.svg')
+      : setThemeUploader('/uploader-light.svg')
+  }, [theme])
 
   const onSaveImage = ({ file }) => {
     const reader = new FileReader()
@@ -42,6 +54,7 @@ export const useImageUploader = (): IUseImageUploader => {
 
   return {
     onSaveImage,
-    imageSource: imageSource
+    imageSource,
+    themeUploader
   }
 }

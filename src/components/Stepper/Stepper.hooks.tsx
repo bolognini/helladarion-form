@@ -10,18 +10,18 @@ interface IStep {
   activeStep: { title: string; description?: string; component: JSX.Element }
 }
 
-export const useStepper = (currentStep: number): IStep => {
+export const useStepper = (currentStep: number, theme: boolean): IStep => {
   const monsterData = useSelector(state => state.data)
 
   const step = [
     {
       title: 'Perfil da Criatura',
-      component: <Profile />
+      component: <Profile theme={theme} />
     },
     {
       title: 'Atributos',
       description:
-        'O deslocamento aceita apenas um valor, sem unidade de medida. Não se preocupe. Na ficha é possível realizar anotações diversas, inclusive particularidades de deslocamento.',
+        'O deslocamento aceita apenas um valor, sem unidade de medida. Na ficha é possível anotar demais particularidades.',
       component: <Attributes coreAttributes />
     },
     {

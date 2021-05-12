@@ -24,14 +24,14 @@ export const useAttributes = ({ coreAttributes }: IProps): Attribute => {
       id: 'healthpoints'
     },
     {
-      label: 'Defesa',
-      placeholder: '21',
-      id: 'defense'
-    },
-    {
       label: 'Deslocamento',
       placeholder: '9',
       id: 'distance'
+    },
+    {
+      label: 'Defesa',
+      placeholder: '21',
+      id: 'defense'
     }
   ]
 

@@ -2,13 +2,14 @@ import { useRouter } from 'next/router'
 import { Button } from 'components/Button/Button'
 import { useForm } from 'hooks/pages/useForm'
 import { Stepper } from 'components/Stepper/Stepper'
+import { ThemeButton } from 'components/ThemeButton/ThemeButton'
 import { Container, ButtonWrapper } from 'styles/pages/Form.style'
-interface IHome {
+interface IForm {
   value: boolean
   toggle: () => void
 }
 
-const Home: React.FC<IHome> = pageProps => {
+const Form: React.FC<IForm> = pageProps => {
   const router = useRouter()
   const {
     currentStep,
@@ -19,7 +20,7 @@ const Home: React.FC<IHome> = pageProps => {
   } = useForm()
   return (
     <Container>
-      <Stepper currentStep={currentStep} />
+      <Stepper theme={pageProps.value} currentStep={currentStep} />
       <ButtonWrapper>
         <Button
           secondary
@@ -36,14 +37,10 @@ const Home: React.FC<IHome> = pageProps => {
         >
           {nextButtonLabel}
         </Button>
-        {/* <input
-          checked={pageProps.value}
-          type="checkbox"
-          onChange={pageProps.toggle}
-        /> */}
+        <ThemeButton value={pageProps.value} toggle={pageProps.toggle} />
       </ButtonWrapper>
     </Container>
   )
 }
 
-export default Home
+export default Form

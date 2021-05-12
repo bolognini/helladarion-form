@@ -8,7 +8,8 @@ export const Container = styled.div<IContainerProps>`
   display: grid;
   grid-template-columns: ${({ coreAttributes }) =>
     coreAttributes ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)'};
-  grid-gap: 48px;
+  grid-row-gap: 24px;
+  grid-column-gap: 48px;
 
   div {
     grid-template-rows: subgrid;
