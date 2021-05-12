@@ -3,8 +3,6 @@ import styled from 'styled-components'
 interface IContainerProps {
   size: string
 }
-// 250
-// 130
 
 export const Container = styled.div<IContainerProps>`
   display: flex;
@@ -12,11 +10,11 @@ export const Container = styled.div<IContainerProps>`
   max-width: ${({ size }) => {
     switch (size) {
       case 'xsmall':
-        return '130px'
+        return '100px'
       case 'small':
-        return '200px'
+        return '150px'
       case 'medium':
-        return '250'
+        return '200px'
       default:
         return '400px'
     }

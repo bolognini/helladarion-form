@@ -1,12 +1,16 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100vw;
+  display: grid;
+  grid-template-rows: 1fr 1fr 400px 1fr;
+  place-items: center;
+  width: 960px;
+  margin: 0 auto;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+
+  button {
+    margin-bottom: 40px;
+  }
 
   h1 {
     font-size: 72px;
@@ -26,16 +30,31 @@ export const Container = styled.div`
 export const ImageHolder = styled.div`
   display: block;
   position: relative;
-  width: 600px;
-  height: 380px;
+  width: 500px;
+  height: 315px;
   background: ${({ theme }) => theme.colors.primary};
-  margin: 56px 0 48px 0;
+  margin: 28px 0;
+
+  &:hover {
+    img {
+      top: -15px;
+      left: -15px;
+      transition: all 0.2s;
+    }
+  }
 
   img {
     position: absolute;
-    top: -20px;
-    left: -20px;
-    max-width: 600px;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.2s;
     border: ${({ theme }) => `6px solid ${theme.colors.primary}`};
+
+    &:hover {
+      top: -15px;
+      left: -15px;
+      transition: all 0.2s;
+    }
   }
 `

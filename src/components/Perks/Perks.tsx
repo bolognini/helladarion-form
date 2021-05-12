@@ -28,7 +28,7 @@ export const Perks: React.FC<{ secondary?: boolean }> = ({ secondary }) => {
               saveType="UPDATE_PERKS"
               label="Rolagem"
               placeholder={smallPlaceholder}
-              size="small"
+              size="medium"
             />
           </InputContainer>
         ))}

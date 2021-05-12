@@ -13,16 +13,18 @@ export const Container = styled.div`
   label {
     display: flex;
     place-content: center;
-    height: 340px;
+    height: 100%;
+    max-height: 350px;
     width: 400px;
     padding: 14px 24px;
     background: transparent;
     border: 2px solid ${({ theme }) => theme.colors.primary};
     cursor: pointer;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
   }
+`
+
+export const Image = styled.img<{ defaultImage: boolean }>`
+  width: ${({ defaultImage }) => defaultImage && '20%'};
+  max-width: 100%;
+  max-height: 100%;
 `
