@@ -19,7 +19,7 @@ const Form: React.FC<IForm> = pageProps => {
     onSendData
   } = useForm()
   return (
-    <Container>
+    <Container suppressHydrationWarning>
       <Stepper theme={pageProps.value} currentStep={currentStep} />
       <ButtonWrapper>
         <Button
