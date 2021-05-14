@@ -23,6 +23,10 @@ export default createGlobalStyle`
   }
 
   body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
     font: 400 16px Montserrat, sans-serif;

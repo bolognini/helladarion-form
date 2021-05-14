@@ -6,7 +6,7 @@ export const Container = styled.div`
   place-items: center;
   width: 960px;
   margin: 0 auto;
-  height: 100vh;
+  max-height: 100vh;
 
   button {
     margin-bottom: 40px;
