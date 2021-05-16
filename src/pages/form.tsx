@@ -28,7 +28,9 @@ const Form: React.FC<IForm> = pageProps => {
           <Button
             secondary
             onClick={() => {
-              currentStep > 0 ? setCurrentStep(currentStep - 1) : router.push('/')
+              currentStep > 0
+                ? setCurrentStep(currentStep - 1)
+                : router.push('/')
             }}
           >
             {backButtonLabel}
