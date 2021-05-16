@@ -1,11 +1,16 @@
 import styled from 'styled-components'
+import { breakpoint } from 'styles/GlobalStyle.style'
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-rows: 570px 1fr;
-  place-items: center;
-  width: 960px;
-  margin: 0 auto;
+  display: none;
+
+  ${breakpoint.large} {
+    display: grid;
+    grid-template-rows: 570px 1fr;
+    place-items: center;
+    width: 960px;
+    margin: 0 auto;
+  }
 
   h1 {
     font-size: 72px;
