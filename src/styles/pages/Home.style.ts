@@ -1,12 +1,17 @@
 import styled from 'styled-components'
+import { breakpoint } from 'styles/GlobalStyle.style'
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-rows: 1fr 1fr 400px 1fr;
-  place-items: center;
-  width: 960px;
-  margin: 0 auto;
-  max-height: 100vh;
+  display: none;
+
+  ${breakpoint.large} {
+    display: grid;
+    grid-template-rows: 1fr 1fr 400px 1fr;
+    place-items: center;
+    width: 960px;
+    margin: 0 auto;
+    max-height: 100vh;
+  }
 
   button {
     margin-bottom: 40px;

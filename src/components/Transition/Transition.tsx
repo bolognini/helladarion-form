@@ -38,7 +38,7 @@ export const Transition: React.FC<{
         {status => (
           <div
             style={{
-              width: '960px',
+              maxWidth: '960px',
               margin: '0 auto',
               ...transitionStyles[status]
             }}
