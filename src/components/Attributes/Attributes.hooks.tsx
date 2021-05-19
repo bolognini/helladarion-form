@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react'
 
 type Attribute = {
-  inputList: Array<{ label: string; placeholder: string; id: string }>
+  inputList: Array<{
+    label: string
+    placeholder: string
+    id: string
+    inputLength: string
+  }>
   attributeType: string
 }
 
