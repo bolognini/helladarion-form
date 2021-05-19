@@ -17,12 +17,14 @@ export const Info = styled.div`
 
   h2 {
     color: ${({ theme }) => theme.colors.primary};
-    font-size: 64px;
+    font-size: 48px;
   }
 
   p {
     text-align: left;
     font-size: 24px;
+    word-wrap: break-word;
+    max-width: 560px;
   }
 `
 

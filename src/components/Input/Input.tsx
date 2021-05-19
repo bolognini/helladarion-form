@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Container } from './Input.style'
 import { useSaveData } from 'hooks/useSaveData'
 import { useLocalStorage } from 'hooks/useLocalStorage'
@@ -10,6 +11,7 @@ type Props = {
   index?: number
   size?: string
   listType?: string
+  maxlength?: any
   saveType?: string
 }
 
@@ -21,6 +23,7 @@ export const Input: React.FC<Props> = ({
   placeholder,
   size,
   listType,
+  maxlength,
   saveType = 'UPDATE_DATA'
 }) => {
   const { updateMonsterData } = useSaveData()
@@ -33,6 +36,7 @@ export const Input: React.FC<Props> = ({
       <label>{label}</label>
       <input
         type="text"
+        maxLength={maxlength}
         placeholder={placeholder}
         defaultValue={defaultValue && defaultValue}
         onKeyUp={event => {

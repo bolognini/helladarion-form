@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Container } from './TextArea.style'
 import { useSaveData } from 'hooks/useSaveData'
 import { useLocalStorage } from 'hooks/useLocalStorage'
@@ -6,7 +7,8 @@ export const TextArea: React.FC<{
   id: string
   label: string
   size?: string
-}> = ({ id, label, size }) => {
+  maxlength?: any
+}> = ({ id, label, size, maxlength }) => {
   const { updateMonsterData } = useSaveData()
   const { saveOnLocalStorage, defaultValue } = useLocalStorage({ id })
 
@@ -14,6 +16,7 @@ export const TextArea: React.FC<{
     <Container size={size}>
       <label>{label}</label>
       <textarea
+        maxLength={maxlength}
         defaultValue={defaultValue && defaultValue}
         onKeyUp={event => {
           saveOnLocalStorage({

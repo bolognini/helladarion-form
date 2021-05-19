@@ -7,8 +7,13 @@ export const Profile: React.FC<{ theme: boolean }> = ({ theme }) => {
   return (
     <Container>
       <LeftBox>
-        <Input id="name" label="Nome da Criatura" placeholder="Wyvern" />
-        <TextArea id="description" label="Descrição" />
+        <Input
+          id="name"
+          maxlength="25"
+          label="Nome da Criatura"
+          placeholder="Wyvern"
+        />
+        <TextArea maxlength="180" id="description" label="Descrição" />
       </LeftBox>
       <ImageUploader theme={theme} />
     </Container>

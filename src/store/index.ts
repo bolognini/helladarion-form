@@ -9,6 +9,8 @@ const INITIAL_STATE = {
     distance: 0,
     healthpoints: 0,
     currentHealth: 0,
+    manapoints: 0,
+    currentMana: 0,
     treasury: '',
     notes: '',
     mugshot: '',
@@ -89,6 +91,11 @@ const monsterData = (state = INITIAL_STATE, action) => {
         return {
           ...state,
           data: { ...state.data, healthpoints: value, currentHealth: value }
+        }
+      } else if (key === 'manapoints') {
+        return {
+          ...state,
+          data: { ...state.data, manapoints: value, currentMana: value }
         }
       } else {
         return { ...state, data: { ...state.data, [key]: value } }

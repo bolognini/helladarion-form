@@ -13,7 +13,7 @@ export const Container = styled.div`
   }
 
   h1 {
-    font-size: 72px;
+    font-size: 64px;
     font-family: Tormenta, serif;
     color: ${({ theme }) => theme.colors.primary};
     margin-top: 40px;

@@ -8,8 +8,9 @@ export const Attributes: React.FC<{ coreAttributes?: boolean }> = ({
   const { inputList, attributeType } = useAttributes({ coreAttributes })
   return (
     <Container coreAttributes={coreAttributes}>
-      {inputList.map(({ label, placeholder, id }) => (
+      {inputList.map(({ label, placeholder, id, inputLength }) => (
         <NumberInput
+          maxlength={inputLength}
           label={label}
           placeholder={placeholder}
           id={id}
