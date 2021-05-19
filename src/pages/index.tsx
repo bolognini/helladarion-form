@@ -24,7 +24,7 @@ const Home: React.FC<IHome> = pageProps => {
           Edite quanto quiser. Fortaleça e enfraqueça as criaturas como preferir
         </p>
         <ImageHolder>
-          <img src="/monster-sheet.png" alt="Ficha digital" />
+          <img src="/sheet.png" alt="Ficha digital" />
         </ImageHolder>
         <Button onClick={() => router.push('/form')}>criar</Button>
         <ThemeButton value={pageProps.value} toggle={pageProps.toggle} />
