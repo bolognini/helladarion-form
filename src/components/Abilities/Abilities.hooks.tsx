@@ -22,7 +22,7 @@ export const useAbilities = (): IAbilities => {
       {
         label: 'Nome',
         placeholder: 'Mordida +17',
-        size: 'medium',
+        size: 'small',
         id: 'attackName',
         maxlength: '20'
       },
@@ -31,14 +31,14 @@ export const useAbilities = (): IAbilities => {
         placeholder: 'Padrão',
         size: 'xsmall',
         id: 'action',
-        maxlength: '20'
+        maxlength: '12'
       },
       {
         label: 'Mana',
         placeholder: '2 PM',
         size: 'xsmall',
         id: 'manaCost',
-        maxlength: '20'
+        maxlength: '5'
       },
       {
         label: 'Dano',
@@ -78,7 +78,7 @@ export const useAbilities = (): IAbilities => {
       {
         label: 'Teste Oposto',
         placeholder: 'Luta',
-        size: 'medium',
+        size: 'small',
         id: 'test',
         maxlength: '20'
       }
@@ -89,7 +89,7 @@ export const useAbilities = (): IAbilities => {
     {
       label: '',
       placeholder: '-',
-      size: 'medium',
+      size: 'small',
       id: 'attackName',
       maxlength: '20'
     },
@@ -142,7 +142,7 @@ export const useAbilities = (): IAbilities => {
       id: 'range',
       maxlength: '9'
     },
-    { label: '', placeholder: '-', size: 'medium', id: 'test', maxlength: '20' }
+    { label: '', placeholder: '-', size: 'small', id: 'test', maxlength: '20' }
   ]
 
   for (let index = 0; index < 3; index++) {
