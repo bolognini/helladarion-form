@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from 'react'
 
 interface IAbilities {
@@ -7,6 +8,7 @@ interface IAbilities {
       label?: string
       placeholder?: string
       size?: string
+      maxlength?: any
     }>
   >
   onAddAbility: () => void
@@ -25,17 +27,31 @@ export const useAbilities = (): IAbilities => {
         maxlength: '20'
       },
       {
-        label: 'Bônus',
-        placeholder: '1D4',
+        label: 'Ação',
+        placeholder: 'Padrão',
         size: 'xsmall',
-        id: 'bonus',
-        maxlength: '9'
+        id: 'action',
+        maxlength: '20'
+      },
+      {
+        label: 'Mana',
+        placeholder: '2 PM',
+        size: 'xsmall',
+        id: 'manaCost',
+        maxlength: '20'
       },
       {
         label: 'Dano',
         placeholder: '2D6 + 7',
         size: 'xsmall',
         id: 'damage',
+        maxlength: '9'
+      },
+      {
+        label: 'Bônus',
+        placeholder: '1D4',
+        size: 'xsmall',
+        id: 'bonus',
         maxlength: '9'
       },
       {
@@ -81,14 +97,28 @@ export const useAbilities = (): IAbilities => {
       label: '',
       placeholder: '-',
       size: 'xsmall',
-      id: 'bonus',
-      maxlength: '9'
+      id: 'action',
+      maxlength: '20'
+    },
+    {
+      label: '',
+      placeholder: '-',
+      size: 'xsmall',
+      id: 'manaCost',
+      maxlength: '20'
     },
     {
       label: '',
       placeholder: '-',
       size: 'xsmall',
       id: 'damage',
+      maxlength: '9'
+    },
+    {
+      label: '',
+      placeholder: '-',
+      size: 'xsmall',
+      id: 'bonus',
       maxlength: '9'
     },
     {
