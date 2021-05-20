@@ -36,7 +36,7 @@ export const ImageHolder = styled.div`
   display: block;
   position: relative;
   width: 500px;
-  height: 285px;
+  height: 294px;
   background: ${({ theme }) => theme.colors.primary};
   margin: 28px 0;
 
