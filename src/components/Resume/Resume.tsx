@@ -7,7 +7,7 @@ export const Resume: React.FC = () => {
   return (
     <Container>
       <Info>
-        <h2>{`nd ${monsterData.level}`}</h2>
+        <h2>{`nd ${monsterData.challengeLevel}`}</h2>
         <p>{`”${monsterData.description}”`}</p>
       </Info>
       <ImageHolder>

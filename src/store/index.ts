@@ -4,7 +4,10 @@ const INITIAL_STATE = {
   data: {
     name: '',
     description: '',
+    monsterType: 'Indefinido',
+    size: 'Indefinido',
     level: 0,
+    challengeLevel: 0,
     defense: 0,
     distance: 0,
     healthpoints: 0,
@@ -52,7 +55,7 @@ const INITIAL_STATE = {
         rolling: ''
       }
     ],
-    resistances: [
+    skills: [
       {
         name: '',
         rolling: ''

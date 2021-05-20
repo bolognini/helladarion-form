@@ -11,7 +11,7 @@ export const Abilities: React.FC = () => {
       <Table>
         {abilitiesList.map((item, index) => (
           <InputContainer key={index}>
-            {item.map(({ id, label, placeholder = '-', size }) => (
+            {item.map(({ id, label, placeholder = '-', size, maxlength }) => (
               <Input
                 id={id}
                 localStorageId={`${id}-${index}`}
@@ -21,6 +21,7 @@ export const Abilities: React.FC = () => {
                 label={label}
                 placeholder={placeholder}
                 size={size}
+                maxlength={maxlength}
               />
             ))}
           </InputContainer>

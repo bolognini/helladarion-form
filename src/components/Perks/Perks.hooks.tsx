@@ -25,7 +25,7 @@ export const usePerks = ({ secondary = false }: IProps): Perks => {
     }
   ]
 
-  const resistances = [
+  const skills = [
     {
       largePlaceholder: 'Fortitude +14',
       smallPlaceholder: 'D20 + 20'
@@ -47,15 +47,15 @@ export const usePerks = ({ secondary = false }: IProps): Perks => {
   useEffect(() => {
     const initialList = secondary
       ? {
-          list: resistances,
-          placeholder: 'Nova Resistência'
+          list: skills,
+          placeholder: 'Nova Perícia'
         }
       : {
           list: senses,
           placeholder: 'Novo Sentido'
         }
 
-    secondary ? setListType('resistances') : setListType('senses')
+    secondary ? setListType('skills') : setListType('senses')
     setInputList(initialList.list)
     setNewPlaceholder(initialList.placeholder)
     const inputList = Array.from(document.querySelectorAll('input'))

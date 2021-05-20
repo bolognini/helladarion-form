@@ -19,6 +19,7 @@ export const Perks: React.FC<{ secondary?: boolean }> = ({ secondary }) => {
               saveType="UPDATE_PERKS"
               label="Título"
               placeholder={largePlaceholder}
+              maxlength="20"
             />
             <Input
               id="rolling"
@@ -29,6 +30,7 @@ export const Perks: React.FC<{ secondary?: boolean }> = ({ secondary }) => {
               label="Rolagem"
               placeholder={smallPlaceholder}
               size="medium"
+              maxlength="20"
             />
           </InputContainer>
         ))}

@@ -15,7 +15,7 @@ export const Container = styled.div<IProps>`
   }
 
   textarea {
-    min-height: ${({ size }) => (size === 'small' ? '184px' : '230px')};
+    min-height: ${({ size }) => (size === 'small' ? '184px' : '110px')};
     height: 100%;
     width: 400px;
     resize: none;

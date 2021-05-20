@@ -22,7 +22,7 @@ export const useAttributes = ({ coreAttributes }: IProps): Attribute => {
       label: 'Nível de Desafio',
       placeholder: '5',
       inputLength: '3',
-      id: 'level'
+      id: 'challengeLevel'
     },
     {
       label: 'Pontos de Vida',

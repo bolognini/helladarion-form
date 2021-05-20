@@ -37,9 +37,9 @@ export const useStepper = (currentStep: number, theme: boolean): IStep => {
       component: <Perks />
     },
     {
-      title: 'Resistências',
+      title: 'Perícia',
       description:
-        'A ficha destaca apenas três resistências. Demais resistências poderão ser acessadas no modal de sentidos, na ficha digital',
+        'A ficha destaca apenas três perícia. Demais perícias poderão ser acessadas no modal de sentidos, na ficha digital',
       component: <Perks secondary />
     },
     {
