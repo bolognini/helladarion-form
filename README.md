@@ -13,7 +13,7 @@ Helladarion Form was created as an auxiliary tool for the Tormenta20 campaign I 
 
 As a Dungeon Master, you have to prepare a lot of enemies for your campaign. This project helps you by organizing the important data where you create and digitally update the enemy stats, removing the need to jumping from page to page on Tormenta20 book to check the enemy specifications.
 
-Do You want to create a new enemy? Just type all its data and it'll render the way you want. You use enemies already created on the book but you constantly customize them on a .txt file? The [virtual sheet](https://github.com/bolognini/helladarion-codex) can update every data by editing the initial stats.
+Do you want to create a new enemy? Just type all its data and it'll render the way you want. You use enemies already created on the book but you constantly customize them on a .txt file? The [virtual sheet](https://github.com/bolognini/helladarion-codex) can update every data by editing the initial stats.
 
 ### Hella-what?
 
