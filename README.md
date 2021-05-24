@@ -3,6 +3,8 @@
 <p align="center"><img src="public/logo.png" alt="T20 Bestiary Logo" width="60"></p>
 <p align="center">&laquo;<b>A simplified monster builder for Tormenta20 RPG system</b>&raquo;</p>
 <p align="center">Helladarion Form send all the enemy data you type and send to a database trough an API. This data will be acessible on <a href='https://github.com/bolognini/helladarion-codex'>Helladarion Codex</a>, the virtual sheet, with the right enemy id</p>
+<br />
+<br />
 
 ## Description
 
