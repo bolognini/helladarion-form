@@ -26,3 +26,35 @@ The initial layout that was made is [this design](https://www.figma.com/file/B2g
 ## Project
 
 This project is a Typescript study. It collects data from the user trough input elements and send them to [Helladarion API](https://github.com/bolognini/helladarion), which will store the data on a Firebase database. After that the data is accessed on [Helladarion Codex](https://github.com/bolognini/helladarion-codex), the Tormenta20 RPG System sheet with editable fields that persists information to build monsters for your RPG campaign.
+
+### Installing
+
+To run the project on development mode, you just need an LTS Node version installed (v14 or higher recommended), and Yarn for managing the packages. If you haven't it yet, you can follow [Yarn installation guide](https://classic.yarnpkg.com/pt-BR/docs/install/), on their official page.
+
+With Node and Yarn installed, run the commands below. They will clone the project on current folder, download all the project dependencies and, in a few minutes, the project will open on your default browser, on the port `:3000`.
+
+```shell
+git clone https://github.com/bolognini/helladarion-form.git
+cd helladarion-form
+yarn && yarn dev
+```
+
+### Built With
+
+* [Next.js](https://nextjs.org/) - A popular React Framework
+* [TypeScript](https://www.typescriptlang.org/) - A superset of JavaScript
+* [Styled Components](https://styled-components.com/) - CSS in JS library
+* [Redux](https://redux.js.org/) - State Container
+* [Axios](https://github.com/axios/axios) - For HTTP requests
+* [Husky](https://github.com/typicode/husky) - Git Hooks lib
+* [ESLint](https://eslint.org/) - JavaScript Linter
+* [Netlify](https://www.netlify.com/) - For CI/CD and deployment
+* [Flaticon](https://www.flaticon.com/) - For theme icons
+
+<hr />
+
+Helladarion Form is in its very first release version, which means it has a lot to improve. Since this is something really small and it's used as an auxiliary personal tool I decided to take it easy. That's why I didn't developed a responsive layout, for example.
+
+If you use it and found some bug, have some suggestion to improve it, please feel free to open an issue or sending a Pull Request. This is an open source project! ✌️
+
+I do not own the rights of anything related to Tormenta20 RPG System. All the rights are reserved and owned by [Jambô Editora](https://jamboeditora.com.br/).
