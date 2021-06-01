@@ -47,6 +47,10 @@ export default createGlobalStyle`
     }
   }
 
+  button {
+    font: 400 16px Montserrat, sans-serif;
+  }
+
   textarea {
     font: 400 16px Montserrat, sans-serif;
   }

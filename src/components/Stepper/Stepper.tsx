@@ -3,10 +3,10 @@ import { Transition } from 'components/Transition/Transition'
 import { useStepper } from './Stepper.hooks'
 import { Container, Description, StepperWrapper } from './Stepper.style'
 
-export const Stepper: React.FC<{ currentStep: number; theme: boolean }> = ({
-  currentStep,
-  theme
-}) => {
+export const Stepper: React.FC<{
+  currentStep: number
+  theme: boolean
+}> = ({ currentStep, theme }) => {
   const {
     activeStep: { title, description, component }
   } = useStepper(currentStep, theme)

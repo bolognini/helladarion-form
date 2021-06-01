@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import { Container, Info, ImageHolder, Image } from './Resume.style'
 
 export const Resume: React.FC = () => {
-  const monsterData = useSelector(state => state.data)
+  const monsterData = useSelector(({ monsterData }) => monsterData.data)
 
   return (
     <Container>

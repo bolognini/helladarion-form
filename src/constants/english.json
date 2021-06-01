@@ -1,0 +1,16 @@
+{
+  "home": "Build digital sheets for your T20 campaign enemies.\nEdit it as you want. Buff and debuff the creatures as you like",
+  "profile": {
+    "title": "Creature Profile"
+  },
+  "attributes": {
+    "title": "Attributes",
+    "description": "The movement accepts just one value with no unit of measurement. On the sheet it's possible to write such details.",
+    "core": {
+      "healthpoints": "Hit Points"
+    },
+    "attr": {
+      "strength": "Strength"
+    }
+  }
+}

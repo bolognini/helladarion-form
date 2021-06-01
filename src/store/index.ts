@@ -1,4 +1,5 @@
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
+import { english, portuguese } from '../constants'
 
 const INITIAL_STATE = {
   data: {
@@ -142,6 +143,26 @@ const monsterData = (state = INITIAL_STATE, action) => {
   }
 }
 
-const store = createStore(monsterData)
+const INITIAL_LANGUAGE = english
+
+const language = (state = INITIAL_LANGUAGE, action) => {
+  switch (action.type) {
+    case 'ENGLISH':
+      localStorage.setItem('language', 'ENGLISH')
+      return english
+    case 'PORTUGUESE':
+      localStorage.setItem('language', 'PORTUGUESE')
+      return portuguese
+    default:
+      return state
+  }
+}
+
+const reducers = combineReducers({
+  monsterData,
+  language
+})
+
+const store = createStore(reducers)
 
 export default store

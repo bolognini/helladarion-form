@@ -1,0 +1,16 @@
+{
+  "home": "Crie fichas digitais dos inimigos de sua campanha de T20 RPG\nEdite quanto quiser. Fortaleça e enfraqueça as criaturas como preferir",
+  "profile": {
+    "title": "Perfil da Criatura"
+  },
+  "attributes": {
+    "title": "Atributos",
+    "description": "O deslocamento aceita apenas um valor, sem unidade de medida. Na ficha é possível anotar demais particularidades.",
+    "core": {
+      "healthpoints": "Pontos de Vida"
+    },
+    "attr": {
+      "strength": "Força"
+    }
+  }
+}

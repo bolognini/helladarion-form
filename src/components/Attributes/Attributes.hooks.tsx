@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 type Attribute = {
   inputList: Array<{
@@ -15,6 +16,9 @@ interface IProps {
 }
 
 export const useAttributes = ({ coreAttributes }: IProps): Attribute => {
+  const { core, attr } = useSelector(
+    ({ language: { attributes } }) => attributes
+  )
   const [attributeType, setAttributeType] = useState(null)
 
   const coreAttributesList = [
@@ -25,7 +29,7 @@ export const useAttributes = ({ coreAttributes }: IProps): Attribute => {
       id: 'challengeLevel'
     },
     {
-      label: 'Pontos de Vida',
+      label: core.healthpoints,
       placeholder: '144',
       inputLength: '3',
       id: 'healthpoints'
@@ -52,7 +56,7 @@ export const useAttributes = ({ coreAttributes }: IProps): Attribute => {
 
   const attributesList = [
     {
-      label: 'Força',
+      label: attr.strength,
       placeholder: '25',
       inputLength: '2',
       id: 'FOR'

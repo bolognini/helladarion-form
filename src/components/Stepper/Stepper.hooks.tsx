@@ -11,17 +11,17 @@ interface IStep {
 }
 
 export const useStepper = (currentStep: number, theme: boolean): IStep => {
-  const monsterData = useSelector(state => state.data)
+  const monsterData = useSelector(({ monsterData }) => monsterData.data)
+  const language = useSelector(({ language }) => language)
 
   const step = [
     {
-      title: 'Perfil da Criatura',
+      title: language.profile.title,
       component: <Profile theme={theme} />
     },
     {
-      title: 'Atributos',
-      description:
-        'O deslocamento aceita apenas um valor, sem unidade de medida. Na ficha é possível anotar demais particularidades.',
+      title: language.attributes.title,
+      description: language.attributes.description,
       component: <Attributes coreAttributes />
     },
     {
