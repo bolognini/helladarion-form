@@ -13,11 +13,11 @@ export const usePerks = ({ secondary = false }: IProps): Perks => {
   const senses = [
     {
       largePlaceholder: 'Iniciativa +5',
-      smallPlaceholder: 'D20 + 16'
+      smallPlaceholder: 'D20 + 5'
     },
     {
       largePlaceholder: 'Percepção +9',
-      smallPlaceholder: 'D20 + 18'
+      smallPlaceholder: 'D20 + 9'
     },
     {
       largePlaceholder: 'Visão no Escuro',
@@ -28,15 +28,15 @@ export const usePerks = ({ secondary = false }: IProps): Perks => {
   const skills = [
     {
       largePlaceholder: 'Fortitude +14',
-      smallPlaceholder: 'D20 + 20'
+      smallPlaceholder: 'D20 + 14'
     },
     {
       largePlaceholder: 'Reflexo +9',
-      smallPlaceholder: 'D20 + 8'
+      smallPlaceholder: 'D20 + 9'
     },
     {
       largePlaceholder: 'Vontade +5',
-      smallPlaceholder: 'D20 + 8'
+      smallPlaceholder: 'D20 + 5'
     }
   ]
 

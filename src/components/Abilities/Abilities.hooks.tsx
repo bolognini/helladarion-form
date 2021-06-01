@@ -42,14 +42,14 @@ export const useAbilities = (): IAbilities => {
       },
       {
         label: 'Dano',
-        placeholder: '2D6 + 7',
+        placeholder: '2D6',
         size: 'xsmall',
         id: 'damage',
         maxlength: '9'
       },
       {
         label: 'Bônus',
-        placeholder: '1D4',
+        placeholder: '+ 7',
         size: 'xsmall',
         id: 'bonus',
         maxlength: '9'
