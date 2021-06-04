@@ -38,7 +38,9 @@ const Home: React.FC<IHome> = pageProps => {
         <ImageHolder>
           <img src="/sheet.png" alt="Ficha digital" />
         </ImageHolder>
-        <Button onClick={() => router.push('/form')}>criar</Button>
+        <Button onClick={() => router.push('/form')}>
+          {language.button.home}
+        </Button>
         <LanguageButton changeLanguage={changeLanguage} />
         <ThemeButton value={pageProps.value} toggle={pageProps.toggle} />
       </Container>

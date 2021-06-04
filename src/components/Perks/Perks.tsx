@@ -4,7 +4,7 @@ import { usePerks } from './Perks.hooks'
 import { Container, InputList, InputContainer } from './Perks.style'
 
 export const Perks: React.FC<{ secondary?: boolean }> = ({ secondary }) => {
-  const { listType, inputList, onAddInput } = usePerks({ secondary })
+  const { listType, inputList, onAddInput, label } = usePerks({ secondary })
 
   return (
     <Container>
@@ -17,7 +17,7 @@ export const Perks: React.FC<{ secondary?: boolean }> = ({ secondary }) => {
               index={index}
               listType={listType}
               saveType="UPDATE_PERKS"
-              label="Título"
+              label={label.title}
               placeholder={largePlaceholder}
               maxlength="20"
             />
@@ -27,7 +27,7 @@ export const Perks: React.FC<{ secondary?: boolean }> = ({ secondary }) => {
               index={index}
               listType={listType}
               saveType="UPDATE_PERKS"
-              label="Rolagem"
+              label={label.rolling}
               placeholder={smallPlaceholder}
               size="medium"
               maxlength="20"

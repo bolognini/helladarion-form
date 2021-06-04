@@ -1,16 +1,105 @@
 {
+  "button": {
+    "home": "create",
+    "form": {
+      "back": "back",
+      "next": "next",
+      "finish": "finish",
+      "cancel": "cancel"
+    }
+  },
   "home": "Build digital sheets for your T20 campaign enemies.\nEdit it as you want. Buff and debuff the creatures as you like",
   "profile": {
-    "title": "Creature Profile"
+    "title": "Creature Profile",
+    "label": {
+      "name": "Creature Name",
+      "level": "Level",
+      "type": "Type",
+      "size": "Size",
+      "description": "Description",
+      "image": "Image"
+    },
+    "placeholder": {
+      "type": "Monster",
+      "size": "Big"
+    }
   },
   "attributes": {
     "title": "Attributes",
-    "description": "The movement accepts just one value with no unit of measurement. On the sheet it's possible to write such details.",
+    "description": "The movement accepts just one value with no unit of measurement. On the sheet it's possible to write such details",
+    "secondDescription": "Type just the attribute value. The modifiers are automatically calculated in the sheet",
     "core": {
-      "healthpoints": "Hit Points"
+      "level": "Challenge Level",
+      "healthpoints": "Hit Points",
+      "mana": "Mana Points",
+      "movement": "Movement",
+      "armor": "Armor"
     },
     "attr": {
-      "strength": "Strength"
+      "strength": "Strength",
+      "dexterity": "Dexterity",
+      "constitution": "Constituition",
+      "intelligence": "Intelligence",
+      "wisdom": "Wisdom",
+      "charisma": "Charisma"
     }
+  },
+  "senses": {
+    "title": "Senses",
+    "description": "The sheet highlights just three senses. Other senses can be accessed inside the senses modal on the digital sheet",
+    "label": {
+      "title": "Title",
+      "rolling": "Rolling"
+    },
+    "placeholder": {
+      "newSkill": "New Skill",
+      "newSense": "New Sense",
+      "sense": {
+        "first": "Initiative +5",
+        "second": "Perception +9",
+        "third": "Night Vision"
+      },
+      "skill": {
+        "first": "Fortitude +14",
+        "second": "Reflex +9",
+        "third": "Will Power +5"
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "The sheet hightlights just three skills. Other skills can be accessed inside the skills modal on the digital sheet"
+  },
+  "abilities": {
+    "title": "Abilities",
+    "description": "The sheet highlights just four abilities. Other abilities can be accessed inside the abilities modal on the digital sheet",
+    "label": {
+      "name": "Name",
+      "action": "Action",
+      "mana": "Mana",
+      "damage": "Damage",
+      "bonus": "Bonus",
+      "critic": "Critic",
+      "attType": "Typo",
+      "range": "Range",
+      "test": "Res. Test"
+    },
+    "placeholder": {
+      "name": "Bite +17",
+      "action": "Default",
+      "mana": "2 PM",
+      "damage": "2D6",
+      "bonus": "+ 7",
+      "critic": "x2",
+      "attType": "Poision",
+      "range": "18m",
+      "test": "Will 12"
+    }
+  },
+  "loot": {
+    "title": "Loot and Notes",
+    "description": "Both the creature loot and the genera notes can be composed of long texts",
+    "lootLabel": "Creature Loot",
+    "notesLabel": "General Notes"
   }
 }

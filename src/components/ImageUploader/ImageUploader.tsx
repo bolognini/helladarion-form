@@ -1,14 +1,17 @@
 import { Container, Image } from './ImageUploader.style'
 import { useImageUploader } from './ImageUploader.hooks'
 
-export const ImageUploader: React.FC<{ theme: boolean }> = ({ theme }) => {
+export const ImageUploader: React.FC<{ theme: boolean; label: string }> = ({
+  theme,
+  label
+}) => {
   const { onSaveImage, imageSource, themeUploader } = useImageUploader({
     theme
   })
 
   return (
     <Container>
-      <span>Imagem</span>
+      <span>{label}</span>
       <label htmlFor="image-uploader">
         <Image src={imageSource || themeUploader} defaultImage={!imageSource} />
       </label>

@@ -1,16 +1,105 @@
 {
+  "button": {
+    "home": "criar",
+    "form": {
+      "back": "voltar",
+      "next": "próximo",
+      "finish": "finalizar",
+      "cancel": "cancelar"
+    }
+  },
   "home": "Crie fichas digitais dos inimigos de sua campanha de T20 RPG\nEdite quanto quiser. Fortaleça e enfraqueça as criaturas como preferir",
   "profile": {
-    "title": "Perfil da Criatura"
+    "title": "Perfil da Criatura",
+    "label": {
+      "name": "Nome da Criatura",
+      "level": "Nível",
+      "type": "Tipo",
+      "size": "Tamanho",
+      "description": "Descrição",
+      "image": "Imagem"
+    },
+    "placeholder": {
+      "type": "Monstro",
+      "size": "Grande"
+    }
   },
   "attributes": {
     "title": "Atributos",
     "description": "O deslocamento aceita apenas um valor, sem unidade de medida. Na ficha é possível anotar demais particularidades.",
+    "secondDescription": "Insira apenas o valor dos atributos. Os modificadores serão calculados automaticamente na ficha",
     "core": {
-      "healthpoints": "Pontos de Vida"
+      "level": "Nível de Desafio",
+      "healthpoints": "Pontos de Vida",
+      "mana": "Pointos de Mana",
+      "movement": "Deslocamento",
+      "armor": "Defesa"
     },
     "attr": {
-      "strength": "Força"
+      "strength": "Força",
+      "dexterity": "Destreza",
+      "constitution": "Constituição",
+      "intelligence": "Inteligência",
+      "wisdom": "Sabedoria",
+      "charisma": "Carisma"
     }
+  },
+  "senses": {
+    "title": "Sentidos",
+    "description": "A ficha destaca apenas três sentidos. Demais sentidos poderão ser acessados no modal de sentidos, na ficha digital",
+    "label": {
+      "title": "Título",
+      "rolling": "Rolagem"
+    },
+    "placeholder": {
+      "newSkill": "Nova Perícia",
+      "newSense": "Novo Sentido",
+      "sense": {
+        "first": "Iniciativa +5",
+        "second": "Percepção +9",
+        "third": "Visão no Escuro"
+      },
+      "skill": {
+        "first": "Fortitude +14",
+        "second": "Reflexo +9",
+        "third": "Vontade +5"
+      }
+    }
+  },
+  "skills": {
+    "title": "Perícias",
+    "description": "A ficha destaca apenas três perícias. Demais perícias poderão ser acessadas no modal de sentidos, na ficha digital"
+  },
+  "abilities": {
+    "title": "Ataques",
+    "description": "A ficha destaca apenas quatro ataques. Demais ataques poderão ser acessados no modal de ataques, na ficha digital",
+    "label": {
+      "name": "Nome",
+      "action": "Ação",
+      "mana": "Mana",
+      "damage": "Dano",
+      "bonus": "Bônus",
+      "critic": "Crítico",
+      "attType": "Tipo",
+      "range": "Alcance",
+      "test": "Teste Oposto"
+    },
+    "placeholder": {
+      "name": "Mordida +17",
+      "action": "Padrão",
+      "mana": "2 PM",
+      "damage": "2D6",
+      "bonus": "+ 7",
+      "critic": "x2",
+      "attType": "Veneno",
+      "range": "18m",
+      "test": "Von 12"
+    }
+  },
+  "loot": {
+    "title": "Tesouro e Anotações",
+    "description": "Tanto o tesouro quanto as anotações gerais podem ser compostos por longos textos",
+    "lootLabel": "Tesouros",
+    "notesLabel": "Anotações Gerais"
   }
 }

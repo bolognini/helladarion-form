@@ -14,9 +14,12 @@ type Props = {
 export const useForm = (): Props => {
   const dispatch = useDispatch()
   const monsterData = useSelector(({ monsterData }) => monsterData.data)
+  const {
+    button: { form: formButton }
+  } = useSelector(({ language }) => language)
   const [currentStep, setCurrentStep] = useState(0)
-  const [backButtonLabel, setBackButtonLabel] = useState('cancelar')
-  const [nextButtonLabel, setNextButtonLabel] = useState('próximo')
+  const [backButtonLabel, setBackButtonLabel] = useState(formButton.cancel)
+  const [nextButtonLabel, setNextButtonLabel] = useState(formButton.next)
 
   const changeLanguage = language => {
     dispatch({ type: language })
@@ -29,13 +32,13 @@ export const useForm = (): Props => {
 
   useEffect(() => {
     currentStep > 0
-      ? setBackButtonLabel('voltar')
-      : setBackButtonLabel('cancelar')
+      ? setBackButtonLabel(formButton.back)
+      : setBackButtonLabel(formButton.cancel)
 
     currentStep > 6
-      ? setNextButtonLabel('finalizar')
-      : setNextButtonLabel('próximo')
-  }, [currentStep])
+      ? setNextButtonLabel(formButton.finish)
+      : setNextButtonLabel(formButton.next)
+  }, [currentStep, formButton])
 
   const onSendData = () => {
     axios

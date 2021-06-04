@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 interface IAbilities {
   abilitiesList: Array<
@@ -15,69 +16,72 @@ interface IAbilities {
 }
 
 export const useAbilities = (): IAbilities => {
+  const {
+    abilities: { label, placeholder }
+  } = useSelector(({ language }) => language)
   const [abilitiesList, setAbilitiesList] = useState([[]])
 
   const list = [
     [
       {
-        label: 'Nome',
-        placeholder: 'Mordida +17',
+        label: label.name,
+        placeholder: placeholder.name,
         size: 'small',
         id: 'attackName',
         maxlength: '20'
       },
       {
-        label: 'Ação',
-        placeholder: 'Padrão',
+        label: label.action,
+        placeholder: placeholder.action,
         size: 'xsmall',
         id: 'action',
         maxlength: '12'
       },
       {
-        label: 'Mana',
-        placeholder: '2 PM',
+        label: label.mana,
+        placeholder: placeholder.mana,
         size: 'xsmall',
         id: 'manaCost',
         maxlength: '5'
       },
       {
-        label: 'Dano',
-        placeholder: '2D6',
+        label: label.damage,
+        placeholder: placeholder.damage,
         size: 'xsmall',
         id: 'damage',
         maxlength: '9'
       },
       {
-        label: 'Bônus',
-        placeholder: '+ 7',
+        label: label.bonus,
+        placeholder: placeholder.bonus,
         size: 'xsmall',
         id: 'bonus',
         maxlength: '9'
       },
       {
-        label: 'Crítico',
-        placeholder: '2x',
+        label: label.critic,
+        placeholder: placeholder.critic,
         size: 'xsmall',
         id: 'critic',
         maxlength: '9'
       },
       {
-        label: 'Tipo',
-        placeholder: 'Veneno',
+        label: label.attType,
+        placeholder: placeholder.attType,
         size: 'xsmall',
         id: 'attType',
         maxlength: '9'
       },
       {
-        label: 'Alcance',
-        placeholder: '18m',
+        label: label.range,
+        placeholder: placeholder.range,
         size: 'xsmall',
         id: 'range',
         maxlength: '9'
       },
       {
-        label: 'Teste Oposto',
-        placeholder: 'Luta',
+        label: label.test,
+        placeholder: placeholder.test,
         size: 'small',
         id: 'test',
         maxlength: '20'
@@ -151,7 +155,7 @@ export const useAbilities = (): IAbilities => {
 
   useEffect(() => {
     setAbilitiesList(list)
-  }, [])
+  }, [placeholder])
 
   const onAddAbility = () => setAbilitiesList([...abilitiesList, newAbility])
 
