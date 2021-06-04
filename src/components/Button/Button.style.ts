@@ -7,7 +7,7 @@ interface IButtonProps {
 export const StyledButton = styled.button<IButtonProps>`
   width: 200px;
   height: 70px;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   color: ${({ theme, secondary }) =>
     secondary ? theme.colors.text : theme.colors.background};

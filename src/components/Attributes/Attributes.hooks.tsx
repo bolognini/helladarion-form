@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 type Attribute = {
   inputList: Array<{
@@ -15,35 +16,38 @@ interface IProps {
 }
 
 export const useAttributes = ({ coreAttributes }: IProps): Attribute => {
+  const { core, attr } = useSelector(
+    ({ language: { attributes } }) => attributes
+  )
   const [attributeType, setAttributeType] = useState(null)
 
   const coreAttributesList = [
     {
-      label: 'Nível de Desafio',
+      label: core.level,
       placeholder: '5',
       inputLength: '3',
       id: 'challengeLevel'
     },
     {
-      label: 'Pontos de Vida',
+      label: core.healthpoints,
       placeholder: '144',
       inputLength: '3',
       id: 'healthpoints'
     },
     {
-      label: 'Pontos de Mana',
+      label: core.mana,
       placeholder: '32',
       inputLength: '3',
       id: 'manapoints'
     },
     {
-      label: 'Deslocamento',
+      label: core.movement,
       placeholder: '9',
       inputLength: '3',
       id: 'distance'
     },
     {
-      label: 'Defesa',
+      label: core.armor,
       placeholder: '21',
       inputLength: '3',
       id: 'defense'
@@ -52,37 +56,37 @@ export const useAttributes = ({ coreAttributes }: IProps): Attribute => {
 
   const attributesList = [
     {
-      label: 'Força',
+      label: attr.strength,
       placeholder: '25',
       inputLength: '2',
       id: 'FOR'
     },
     {
-      label: 'Destreza',
+      label: attr.dexterity,
       placeholder: '12',
       inputLength: '2',
       id: 'DES'
     },
     {
-      label: 'Constituição',
+      label: attr.constitution,
       placeholder: '23',
       inputLength: '2',
       id: 'CON'
     },
     {
-      label: 'Inteligência',
+      label: attr.intelligence,
       placeholder: '6',
       inputLength: '2',
       id: 'INT'
     },
     {
-      label: 'Sabedoria',
+      label: attr.wisdom,
       placeholder: '12',
       inputLength: '2',
       id: 'SAB'
     },
     {
-      label: 'Carisma',
+      label: attr.charisma,
       placeholder: '9',
       inputLength: '2',
       id: 'CAR'

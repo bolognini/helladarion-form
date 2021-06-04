@@ -29,6 +29,7 @@ export const Container = styled.div`
     font-size: 18px;
     line-height: 28px;
     text-align: center;
+    white-space: pre-wrap;
   }
 `
 

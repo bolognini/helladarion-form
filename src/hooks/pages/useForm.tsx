@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -8,29 +8,47 @@ type Props = {
   backButtonLabel: string
   nextButtonLabel: string
   onSendData: () => void
+  changeLanguage: (language: string) => void
 }
 
 export const useForm = (): Props => {
-  const monsterData = useSelector(state => state.data)
+  const dispatch = useDispatch()
+  const monsterData = useSelector(({ monsterData }) => monsterData.data)
+  const {
+    button: { form: formButton }
+  } = useSelector(({ language }) => language)
   const [currentStep, setCurrentStep] = useState(0)
-  const [backButtonLabel, setBackButtonLabel] = useState('cancelar')
-  const [nextButtonLabel, setNextButtonLabel] = useState('próximo')
+  const [backButtonLabel, setBackButtonLabel] = useState(formButton.cancel)
+  const [nextButtonLabel, setNextButtonLabel] = useState(formButton.next)
+
+  const changeLanguage = language => {
+    dispatch({ type: language })
+  }
+
+  useEffect(() => {
+    const loadedLanguage = localStorage.getItem('language') || 'ENGLISH'
+    dispatch({ type: loadedLanguage })
+  }, [])
 
   useEffect(() => {
     currentStep > 0
-      ? setBackButtonLabel('voltar')
-      : setBackButtonLabel('cancelar')
+      ? setBackButtonLabel(formButton.back)
+      : setBackButtonLabel(formButton.cancel)
 
     currentStep > 6
-      ? setNextButtonLabel('finalizar')
-      : setNextButtonLabel('próximo')
-  }, [currentStep])
+      ? setNextButtonLabel(formButton.finish)
+      : setNextButtonLabel(formButton.next)
+  }, [currentStep, formButton])
 
   const onSendData = () => {
     axios
       .post('https://helladarion.herokuapp.com/monster/create', monsterData)
       .then(res => {
+        const theme = localStorage.getItem('darkMode')
+        const language = localStorage.getItem('language')
         localStorage.clear()
+        localStorage.setItem('darkMode', theme)
+        localStorage.setItem('language', language)
         window.open(
           `https://helladarion-codex.netlify.app/?id=${res.data.id}`,
           '_blank'
@@ -44,6 +62,7 @@ export const useForm = (): Props => {
     setCurrentStep,
     backButtonLabel,
     nextButtonLabel,
-    onSendData
+    onSendData,
+    changeLanguage
   }
 }

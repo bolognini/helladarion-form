@@ -1,42 +1,49 @@
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 type Perks = {
   listType: string
   inputList: Array<{ largePlaceholder: string; smallPlaceholder: string }>
   onAddInput: () => void
+  label: {
+    [key: string]: string
+  }
 }
 interface IProps {
   secondary?: boolean
 }
 
 export const usePerks = ({ secondary = false }: IProps): Perks => {
+  const {
+    senses: { label, placeholder }
+  } = useSelector(({ language }) => language)
   const senses = [
     {
-      largePlaceholder: 'Iniciativa +5',
-      smallPlaceholder: 'D20 + 16'
+      largePlaceholder: placeholder.sense.first,
+      smallPlaceholder: 'D20 + 5'
     },
     {
-      largePlaceholder: 'Percepção +9',
-      smallPlaceholder: 'D20 + 18'
+      largePlaceholder: placeholder.sense.second,
+      smallPlaceholder: 'D20 + 9'
     },
     {
-      largePlaceholder: 'Visão no Escuro',
+      largePlaceholder: placeholder.sense.third,
       smallPlaceholder: '-'
     }
   ]
 
   const skills = [
     {
-      largePlaceholder: 'Fortitude +14',
-      smallPlaceholder: 'D20 + 20'
+      largePlaceholder: placeholder.skill.first,
+      smallPlaceholder: 'D20 + 14'
     },
     {
-      largePlaceholder: 'Reflexo +9',
-      smallPlaceholder: 'D20 + 8'
+      largePlaceholder: placeholder.skill.second,
+      smallPlaceholder: 'D20 + 9'
     },
     {
-      largePlaceholder: 'Vontade +5',
-      smallPlaceholder: 'D20 + 8'
+      largePlaceholder: placeholder.skill.third,
+      smallPlaceholder: 'D20 + 5'
     }
   ]
 
@@ -48,11 +55,11 @@ export const usePerks = ({ secondary = false }: IProps): Perks => {
     const initialList = secondary
       ? {
           list: skills,
-          placeholder: 'Nova Perícia'
+          placeholder: placeholder.newSkill
         }
       : {
           list: senses,
-          placeholder: 'Novo Sentido'
+          placeholder: placeholder.newSense
         }
 
     secondary ? setListType('skills') : setListType('senses')
@@ -60,7 +67,7 @@ export const usePerks = ({ secondary = false }: IProps): Perks => {
     setNewPlaceholder(initialList.placeholder)
     const inputList = Array.from(document.querySelectorAll('input'))
     inputList.forEach(input => (input.value = ''))
-  }, [secondary])
+  }, [secondary, placeholder])
 
   const onAddInput = () =>
     setInputList([
@@ -71,6 +78,7 @@ export const usePerks = ({ secondary = false }: IProps): Perks => {
   return {
     inputList,
     onAddInput,
-    listType
+    listType,
+    label
   }
 }

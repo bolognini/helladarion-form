@@ -11,47 +11,42 @@ interface IStep {
 }
 
 export const useStepper = (currentStep: number, theme: boolean): IStep => {
-  const monsterData = useSelector(state => state.data)
+  const monsterData = useSelector(({ monsterData }) => monsterData.data)
+  const language = useSelector(({ language }) => language)
 
   const step = [
     {
-      title: 'Perfil da Criatura',
-      component: <Profile theme={theme} />
+      title: language.profile.title,
+      component: <Profile theme={theme} constants={language.profile} />
     },
     {
-      title: 'Atributos',
-      description:
-        'O deslocamento aceita apenas um valor, sem unidade de medida. Na ficha é possível anotar demais particularidades.',
+      title: language.attributes.title,
+      description: language.attributes.description,
       component: <Attributes coreAttributes />
     },
     {
-      title: 'Atributos',
-      description:
-        'Insira apenas o valor dos atributos. Os modificadores serão calculados automaticamente na ficha',
+      title: language.attributes.title,
+      description: language.attributes.secondDescription,
       component: <Attributes />
     },
     {
-      title: 'Sentidos',
-      description:
-        'A ficha destaca apenas três sentidos. Demais sentidos poderão ser acessados no modal de sentidos, na ficha digital',
+      title: language.senses.title,
+      description: language.senses.description,
       component: <Perks />
     },
     {
-      title: 'Perícias',
-      description:
-        'A ficha destaca apenas três perícias. Demais perícias poderão ser acessadas no modal de sentidos, na ficha digital',
+      title: language.skills.title,
+      description: language.skills.description,
       component: <Perks secondary />
     },
     {
-      title: 'Ataques',
-      description:
-        'A ficha destaca apenas quatro ataques. Demais ataques poderão ser acessados no modal de ataques, na ficha digital',
+      title: language.abilities.title,
+      description: language.abilities.description,
       component: <Abilities />
     },
     {
-      title: 'Tesouro e Anotações',
-      description:
-        'Tanto o tesouro quanto as anotações gerais podem ser compostos por longos textos',
+      title: language.loot.title,
+      description: language.loot.description,
       component: <Notes />
     },
     {

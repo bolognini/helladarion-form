@@ -3,6 +3,7 @@ import { Button } from 'components/Button/Button'
 import { useForm } from 'hooks/pages/useForm'
 import { Stepper } from 'components/Stepper/Stepper'
 import { ThemeButton } from 'components/ThemeButton/ThemeButton'
+import { LanguageButton } from 'components/LanguageButton/LanguageButton'
 import { ResponsiveFallback } from 'components/ResponsiveFallback/ResponsiveFallback'
 import { Container, ButtonWrapper } from 'styles/pages/Form.style'
 interface IForm {
@@ -17,8 +18,10 @@ const Form: React.FC<IForm> = pageProps => {
     setCurrentStep,
     backButtonLabel,
     nextButtonLabel,
-    onSendData
+    onSendData,
+    changeLanguage
   } = useForm()
+
   return (
     <section>
       <ResponsiveFallback />
@@ -42,6 +45,7 @@ const Form: React.FC<IForm> = pageProps => {
           >
             {nextButtonLabel}
           </Button>
+          <LanguageButton changeLanguage={changeLanguage} />
           <ThemeButton value={pageProps.value} toggle={pageProps.toggle} />
         </ButtonWrapper>
       </Container>
